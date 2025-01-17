@@ -9,54 +9,98 @@ library(targets)
 
 # Set target options:
 tar_option_set(
-  packages = c("tibble") # Packages that your targets need for their tasks.
-  # format = "qs", # Optionally set the default storage format. qs is fast.
-  #
-  # Pipelines that take a long time to run may benefit from
-  # optional distributed computing. To use this capability
-  # in tar_make(), supply a {crew} controller
-  # as discussed at https://books.ropensci.org/targets/crew.html.
-  # Choose a controller that suits your needs. For example, the following
-  # sets a controller that scales up to a maximum of two workers
-  # which run as local R processes. Each worker launches when there is work
-  # to do and exits if 60 seconds pass with no tasks to run.
-  #
-  #   controller = crew::crew_controller_local(workers = 2, seconds_idle = 60)
-  #
-  # Alternatively, if you want workers to run on a high-performance computing
-  # cluster, select a controller from the {crew.cluster} package.
-  # For the cloud, see plugin packages like {crew.aws.batch}.
-  # The following example is a controller for Sun Grid Engine (SGE).
-  # 
-  #   controller = crew.cluster::crew_controller_sge(
-  #     # Number of workers that the pipeline can scale up to:
-  #     workers = 10,
-  #     # It is recommended to set an idle time so workers can shut themselves
-  #     # down if they are not running tasks.
-  #     seconds_idle = 120,
-  #     # Many clusters install R as an environment module, and you can load it
-  #     # with the script_lines argument. To select a specific verison of R,
-  #     # you may need to include a version string, e.g. "module load R/4.3.2".
-  #     # Check with your system administrator if you are unsure.
-  #     script_lines = "module load R"
-  #   )
-  #
-  # Set other options as needed.
+  packages = c(
+    "tidyverse",
+    "brms",
+    "ordbetareg",
+    "bayesplot",
+    "tidybayes",
+    "rstan",
+    "patchwork",
+    "here",
+    "broom.mixed"
+  ),
+  memory = "transient",
+  format = "qs",
+  garbage_collection = TRUE,
+  storage = "worker",
+  retrieval = "worker"
 )
-
+   
 # Run the R scripts in the R/ folder with your custom functions:
-tar_source()
-# tar_source("other_functions.R") # Source other scripts as needed.
+tar_source("R/functions.R")
 
-# Replace the target list below with your own:
 list(
+  # Read and prepare sample of prior client data
   tar_target(
-    name = data,
-    command = tibble(x = rnorm(100), y = rnorm(100))
-    # format = "qs" # Efficient storage for general data objects.
+    prior_data_tul_file,
+    here("data", "prior_sample_data.csv"),
+    format = "file"
   ),
   tar_target(
-    name = model,
-    command = coefficients(lm(y ~ x, data = data))
+    prior_data_tul, 
+    read_prepare_data(prior_data_tul_file)
+  ),
+  
+  tar_target(
+    prior_data_rpe_file,
+    here("data", "prior_sample_rpe_data.csv"),
+    format = "file"
+  ),
+  tar_target(
+    prior_data_rpe, 
+    read_csv(prior_data_rpe_file)
+  ),
+  
+  # Read and prepare study data
+  tar_target(
+    data_file,
+    here("data", "data.csv"),
+    format = "file"
+  ),
+  tar_target(
+    data, 
+    read_prepare_data(data_file)
+  ),
+  
+  # Setup rstan to run chains in parallel
+  tar_target(
+    rstan, 
+    rstan_setup()
+  ),
+  
+  # Setup custom hurdle_student_t family
+  tar_target(
+    hurdle_student_t, 
+    hurdle_student_t_setup()
+  ),
+  tar_target(
+    stan_funs, 
+    stan_funs_setup()
+  ),
+  tar_target(
+    stan_vars, 
+    stan_vars_setup(stan_funs)
+  ),
+  
+  # Fit prior models
+  tar_target(
+    model_prior_sample_tul,
+    fit_model_prior_sample_tul(prior_data_tul, stan_vars, hurdle_student_t)
+  ),
+  tar_target(
+    model_prior_sample_rpe,
+    fit_model_prior_sample_rpe(prior_data_rpe)
+  ),
+  
+  # Fit experimental models
+  tar_target(
+    priors,
+    set_priors_tul(model_prior_sample_tul)
+  ),
+  tar_target(
+    model_tul,
+    fit_model_tul(data, stan_vars, hurdle_student_t, priors)
   )
+  
 )

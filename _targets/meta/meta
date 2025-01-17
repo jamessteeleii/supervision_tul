@@ -1,0 +1,34 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+data|stem|b2d3fa586566d03c|d967c350d12e970f|894aff5c90f5527e|33550471||t20105.5033085641s|1020cdd0e93ef78f|2744|qs|local|vector|||0.65||
+data_file|stem|696d36780bf651be|ee6cebdffc9a61e4|2c530c1562a7fbd1|-679625259|C:/Users/james/Dropbox/Research/Kieser Australia/Supervision and TUL - Acute Study/supervision_tul/data/data.csv|t20105.502986375s|b87d8763d479d002|10238|file|local|vector|||4.59||
+fit_model_prior_sample_rpe|function|073d92706379d275|||||||||||||||
+fit_model_prior_sample_tul|function|1a33214c634e2ed3|||||||||||||||
+fit_model_rpe|function|b9d9863bde57a082|||||||||||||||
+fit_model_tul|function|bbf11a71c18f9ba1|||||||||||||||
+hurdle_student_t|stem|88febcc959676bee|99d53633fe833ba1|fec10c0fbfdf7d8b|2063339794||t20104.659446836s|b252084a240eec72|455|qs|local|vector|||0||
+hurdle_student_t_setup|function|2b0fdcba93765193|||||||||||||||
+model_prior_sample_rpe|stem|2b134775e17121d1|97aea9d3382583bb|07584e1ab49c1269|-1351336331||t20105.6917842591s|4c5dbba5bcc95b46|17200656|qs|local|vector|||518.57||
+model_prior_sample_tul|stem|4ae1f324009990cb|90885631cfcb40d5|062fa044a7240380|222913830||t20105.7140665629s|447803b119a5abb4|408121979|qs|local|vector|||1924.16||
+model_prior_sample_tul_assisted|stem|0a262a7b0c0029c3|505732ac6555f3a9|dafc816f50c5398a|241371180||t20104.6666183035s|579e983cccd692b6|216212557|qs|local|vector|||594.2||
+model_prior_sample_tul_core|stem|c7c5fa680626e3ec|dfab2191844391c2|dafc816f50c5398a|1786397538||t20104.6768996977s|075f096ea1c60a19|204011419|qs|local|vector|||887.34||
+model_tul|stem|c67c0b4596900e73|8abcc8ccee28a4b5|63033f08036465a6|-1938942288||t20105.7656499639s|8af62ba45f0c3fd1|45171280|qs|local|vector|||107.91||
+posterior_epred_hurdle_student_t|function|204d96bf3da525a8|||||||||||||||
+posterior_predict_hurdle_student_t|function|174ae340733e04d5|||||||||||||||
+prior_data|stem|d74be036fba95fe5|ba1ed3bf26acf36f|7b4fd9a41d1aceb3|-994734073||t20104.6597294163s|e23e881aa9b90b7e|75768|qs|local|vector|||0.66||
+prior_data_file|stem|5990c1bb5a048e82|825cd54eb57e9451|2c530c1562a7fbd1|-1814086319|C:/Users/james/Dropbox/Research/Kieser Australia/Supervision and TUL - Acute Study/supervision_tul/data/prior_sample_data.csv|t20104.5609267611s|b2e4a97319074935|383851|file|local|vector|||4.63||
+prior_data_rpe|stem|42efe06f1ab4e338|fade6d1206cd329d|454e13fb483420ec|-1843036055||t20105.6853772857s|41c9bc256d123971|11427|qs|local|vector|||0.13||
+prior_data_rpe_file|stem|365eac11ecda0a49|d587eb07a1923e9a|2c530c1562a7fbd1|-965575383|C:/Users/james/Dropbox/Research/Kieser Australia/Supervision and TUL - Acute Study/supervision_tul/data/prior_sample_rpe_data.csv|t20105.6184434192s|f06e3fcada347480|52748|file|local|vector|||0||
+prior_data_tul|stem|d74be036fba95fe5|aac71d4e671d8b15|0f129495be374b92|-997144399||t20105.6853733993s|e23e881aa9b90b7e|75768|qs|local|vector|||0.31||
+prior_data_tul_file|stem|5990c1bb5a048e82|825cd54eb57e9451|2c530c1562a7fbd1|-226326432|C:/Users/james/Dropbox/Research/Kieser Australia/Supervision and TUL - Acute Study/supervision_tul/data/prior_sample_data.csv|t20104.5609267611s|b2e4a97319074935|383851|file|local|vector|||4.78||
+priors|stem|02b507cc3b1c024c|a710a32357250482|79dd8a47b5f8bb3d|-706291558||t20105.7643953711s|69ad9763a553bcd5|714|qs|local|vector|||2.86|some parameter names contain underscores term naming may be unreliable|
+read_prepare_data|function|fa1f6aa16d1ba071|||||||||||||||
+rstan|stem|19b58ec2e5619632|066d3b705f07972a|845e01c6828f73f0|1919994806||t20104.6594442806s|b0c128ee413cce30|114|qs|local|vector|||4.47||
+rstan_setup|function|d82cad57281e544d|||||||||||||||
+set_priors|function|056bdb01c674a7b7|||||||||||||||
+set_priors_rpe|function|b229647c24775cdb|||||||||||||||
+set_priors_tul|function|48b9471ad5f3e2be|||||||||||||||
+stan_fun|stem||e37131df76b7e452|2c530c1562a7fbd1|-1737064211||t20104.6542947058s||0|qs|local|vector|||5.86||could not find function stan_fun_setup
+stan_funs|stem|bb7a70dfd957fc39|0e778d7f4ea71175|b2151df5ae43a0a9|702167544||t20104.6594490127s|2b142edbc17bd98c|214|qs|local|vector|||0||
+stan_funs_setup|function|68023d0c5f2f3505|||||||||||||||
+stan_vars|stem|617352edee29bfb2|e293f70a8c5ff0b5|8450197c4c6b4bee|-204323540||t20104.6597196724s|ed14b4d8526ebe37|334|qs|local|vector|||0||
+stan_vars_setup|function|93bfc740bb756efc|||||||||||||||

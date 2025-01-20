@@ -240,5 +240,42 @@ list(
     plot_combined_rpe_discomfort,
     make_plot_combined_rpe_discomfort(plot_preds_rpe, plot_contrasts_rpe,
                            plot_preds_discomfort, plot_contrasts_discomfort)
+  ),
+  
+  # Make plots into tiffs
+  tar_target(
+    plot_combined_data_tiff,
+    ggsave(
+      "plots/plot_combined_data.tiff", 
+      plot_combined_data, 
+      device = "tiff",
+      dpi = 300,
+      w = 7.5,
+      h = 7.5
+    )
+  ),
+  
+  tar_target(
+    plot_combined_tul_tiff,
+    ggsave(
+      "plots/plot_combined_tul.tiff", 
+      plot_combined_tul, 
+      device = "tiff",
+      dpi = 300,
+      w = 7.5,
+      h = 7
+    )
+  ),
+  
+  tar_target(
+    plot_combined_rpe_discomfort_tiff,
+    ggsave(
+      "plots/plot_combined_rpe_discomfort.tiff", 
+      plot_combined_rpe_discomfort, 
+      device = "tiff",
+      dpi = 300,
+      w = 7.5,
+      h = 7
+    )
   )
 )

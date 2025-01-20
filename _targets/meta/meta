@@ -1,13 +1,13 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 contrast_draws_discomfort|stem|15a0ee360106111d|a9458f33051ced7e|faf19921bde2b4fe|1960153898||t20108.3773631064s|5635f4b9977c5254|55260|qs|local|vector|||5.31||
 contrast_draws_rpe|stem|ce6d291b6fedbd7e|5f8d07ab13ef26fc|4de2d502849d3b02|1945802634||t20108.378689096s|45abc86043f58f52|103344|qs|local|vector|||5.62||
-contrast_draws_tul|stem|e81c239769aa7143|f9e6d9c5d9ac7c1b|1b35c14f181eaf5d|-1749964042||t20108.3902300087s|1dd3f29ff927281f|113354|qs|local|vector|||36.44||
-contrast_draws_tul_hu|stem|ebfb4bfbd7dd948f|e9f6c195b583072c|8dd9c4ce7e7952fd|400971775||t20108.378615321s|d0a08152a482e160|112915|qs|local|vector|||31.58||
+contrast_draws_tul|stem|609e99e9c59d7f22|f9e6d9c5d9ac7c1b|10cca32af6de01f8|-1749964042||t20108.7281378387s|161aed2d625b4446|113458|qs|local|vector|||36.62||
+contrast_draws_tul_hu|stem|e78818bd29969cd4|e9f6c195b583072c|a2b043a0a38a124a|400971775||t20108.7276990409s|697c9395c1487caf|113034|qs|local|vector|||31.64||
 data|stem|71bb38231831e4eb|0d3385e85a71862b|06f94ef9b6be8ced|33550471||t20106.4971170232s|74e9c122ac07e444|2867|qs|local|vector|||0.29||
 data_file|stem|97a80533503f3c63|ee6cebdffc9a61e4|2c530c1562a7fbd1|-679625259|C:/Users/james/Dropbox/Research/Kieser Australia/Supervision and TUL - Acute Study/supervision_tul/data/data.csv|t20106.4923148888s|1861558676053f6a|7623|file|local|vector|||5.09||
 fit_model_discomfort|function|2482110683dc1960|||||||||||||||
 fit_model_prior_sample_rpe|function|073d92706379d275|||||||||||||||
-fit_model_prior_sample_tul|function|1a33214c634e2ed3|||||||||||||||
+fit_model_prior_sample_tul|function|731ffc75b29613c0|||||||||||||||
 fit_model_rpe|function|ece8b3531ced88b0|||||||||||||||
 fit_model_tul|function|5420eb1abbad4fb2|||||||||||||||
 get_contrast_draws_discomfort|function|c193ee2baf1aec1a|||||||||||||||
@@ -20,7 +20,7 @@ get_pred_draws_tul|function|f769fc1cec0749f8|||||||||||||||
 get_pred_draws_tul_hu|function|f6985976dd394f88|||||||||||||||
 hurdle_student_t|stem|88febcc959676bee|99d53633fe833ba1|fec10c0fbfdf7d8b|2063339794||t20104.659446836s|b252084a240eec72|455|qs|local|vector|||0||
 hurdle_student_t_setup|function|2b0fdcba93765193|||||||||||||||
-make_plot_combined_data|function|066b246131e42da9|||||||||||||||
+make_plot_combined_data|function|f9b2fd9e8d33e0d5|||||||||||||||
 make_plot_combined_rpe_discomfort|function|21658eafedc6411d|||||||||||||||
 make_plot_combined_tul|function|43e622ac71bacc5a|||||||||||||||
 make_plot_contrasts_discomfort|function|5d6cd31ce34ef39a|||||||||||||||
@@ -29,43 +29,46 @@ make_plot_contrasts_tul|function|c62ef882f2caccd6|||||||||||||||
 make_plot_contrasts_tul_hu|function|7476700535b43709|||||||||||||||
 make_plot_data_discomfort|function|51424aeda702b221|||||||||||||||
 make_plot_data_rpe|function|23c329f4017aeb66|||||||||||||||
-make_plot_data_tul|function|1fbbda7b2a51029f|||||||||||||||
+make_plot_data_tul|function|9f0d294d918dda6f|||||||||||||||
 make_plot_preds_discomfort|function|cbe267943e099e21|||||||||||||||
 make_plot_preds_rpe|function|db3f02b75eaf7718|||||||||||||||
-make_plot_preds_tul|function|325ab181ff43ad7d|||||||||||||||
+make_plot_preds_tul|function|1bbb390bcb20dd5b|||||||||||||||
 make_plot_preds_tul_hu|function|4a1b85a2bd01003d|||||||||||||||
 make_plot_prior_sample_rpe|function|fd2bb17cdd1bfaff|||||||||||||||
-make_plot_prior_sample_tul|function|d6be93d56e5519a6|||||||||||||||
+make_plot_prior_sample_tul|function|e6b091c41c65a776|||||||||||||||
 model_discomfort|stem|abaffa1cd85cb82a|8a401dda3f37b954|11241684ffb0ab75|-2039126328||t20107.4194981677s|f22e828733ca9f73|89702339|qs|local|vector|||312.07|There were 183 divergent transitions after warmup. Seehttpsmcstan.orgmiscwarnings.htmldivergenttransitionsafterwarmupto find out why this is a problem and how to eliminate them.. There were 1 chains where the estimated Bayesian Fraction of Missing Information was low. Seehttpsmcstan.orgmiscwarnings.htmlbfmilow. Examine the pairs plot to diagnose sampling problems. Bulk Effective Samples Size ESS is too low, indicating posterior means and medians may be unreliable.Running the chains for more iterations may help. Seehttpsmcstan.orgmiscwarnings.htmlbulkess. Tail Effective Samples Size ESS is too low, indicating posterior variances and tail quantiles may be unreliable.Running the chains for more iterations may help. Seehttpsmcstan.orgmiscwarnings.htmltailess|
 model_prior_sample_rpe|stem|07dbcb1c6f8b963a|97aea9d3382583bb|81118339e62f6ab8|-1351336331||t20107.3838448593s|30e1407dafb76c9f|17200058|qs|local|vector|||556.31||
-model_prior_sample_tul|stem|65a0588c3d10df2e|90885631cfcb40d5|ff49abfc9f49a6f9|222913830||t20107.4451885817s|d3fd25598bc4853b|408149359|qs|local|vector|||2049.27||
+model_prior_sample_tul|stem|2ab187b94b48b086|90885631cfcb40d5|cfaf6538f2c4ec2e|222913830||t20108.725703222s|4a6d8e6edd7e2bdb|408146333|qs|local|vector|||2115.74||
 model_prior_sample_tul_assisted|stem|0a262a7b0c0029c3|505732ac6555f3a9|dafc816f50c5398a|241371180||t20104.6666183035s|579e983cccd692b6|216212557|qs|local|vector|||594.2||
 model_prior_sample_tul_core|stem|c7c5fa680626e3ec|dfab2191844391c2|dafc816f50c5398a|1786397538||t20104.6768996977s|075f096ea1c60a19|204011419|qs|local|vector|||887.34||
 model_rpe|stem|a7f574423849ab81|83dd51485b8de557|95acbf713f35b569|-501003324||t20106.4998163391s|a4c639731cbfa1dc|89375393|qs|local|vector|||232.74||
-model_tul|stem|792e18a69e73e8b5|aa218c0222d16c2d|4aed47fceb0112eb|-1938942288||t20107.5924369015s|180f06257b8aa8f0|45320577|qs|local|vector|||154.28||
-plot_combined_data|stem|255418c070eb98a3|e94b5dbbed281056|f484d4ae26561890|671039339||t20108.4685698344s|a335218e5fca285d|1475171|qs|local|vector|||0.02||
+model_tul|stem|6dd8de337abd416e|aa218c0222d16c2d|d66567611e876680|-1938942288||t20108.7270745826s|58dfb8fde93f809b|45336663|qs|local|vector|||114.29||
+plot_combined_data|stem|a31b01975f2179e0|e94b5dbbed281056|80a6a7c814c856d9|671039339||t20108.6391013419s|f64c6247d59fb1bd|1570530|qs|local|vector|||0.01||
+plot_combined_data_tiff|stem|f687273e27896985|ff0fa2d420063240|286fa22f334c2b86|1646967051||t20108.6416626388s|8781e7d3a4a21eb4|105|qs|local|vector|||1.07||
 plot_combined_rpe_discomfort|stem|60125b19cc3686b7|d93694ddbc872064|cde38b97be4c2127|-407254408||t20108.466235379s|b67703f4929312d3|4182993|qs|local|vector|||0.01||
-plot_combined_tul|stem|9daa1454b195d69f|4e40e0c5fa6b96b0|be75e0a8fb104c22|-1312985950||t20108.4662420949s|b7a412e2ebeafa7c|5396937|qs|local|vector|||0.02||
+plot_combined_rpe_discomfort_tiff|stem|9210a455d0eade83|5f19a9189b94f5cb|37b1f95ec0812b61|-1463255941||t20108.6429838562s|2159cf38e38ad193|115|qs|local|vector|||1.74|Removed 2 rows containing missing values or values outside the scale rangegeom_vline.. Removed 2 rows containing missing values or values outside the scale rangegeom_vline.|
+plot_combined_tul|stem|0289d2563f432a36|4e40e0c5fa6b96b0|b48cbd4feef99494|-1312985950||t20108.728356596s|cb27f64a2073ee48|5548349|qs|local|vector|||0.03||
+plot_combined_tul_tiff|stem|c49485de2d936009|a82999e8f2fb55c8|5b575e80b85ada77|1342543929||t20108.7283911724s|da7f33a0f827466a|104|qs|local|vector|||2.48|Removed 17 rows containing missing values or values outside the scale rangestat_slabinterval.. Removed 2 rows containing missing values or values outside the scale rangegeom_vline.|
 plot_contrasts_discomfort|stem|8ef629b970d3d5d5|bd8f5d81b01260bc|4c9cdf6bee1bd213|1270957714||t20108.428713065s|a332b2b0841be999|526711|qs|local|vector|||0.01||
 plot_contrasts_rpe|stem|c089416d9c12535f|e405506efdf3a349|6652ee7ad62d233a|757678525||t20108.4362010366s|e26085fe9e5503e0|752847|qs|local|vector|||0.03||
-plot_contrasts_tul|stem|576024c5a63e63e3|b7b46afba5a852ac|f28579ea950e0146|-1317939829||t20108.4287167258s|b5c017246e3891b4|777663|qs|local|vector|||0.02||
-plot_contrasts_tul_hu|stem|b92bf7fb74c33bd3|1cfdfcfc752c53c0|56375de15a819a02|-1091402967||t20108.4287202183s|012acbb7bee2fca8|782760|qs|local|vector|||0.02||
+plot_contrasts_tul|stem|1213e53d5eff5411|b7b46afba5a852ac|64b062af34b90127|-1317939829||t20108.7283439706s|18a0768f1b6f9bda|781458|qs|local|vector|||0||
+plot_contrasts_tul_hu|stem|f784c86e7fb5980a|1cfdfcfc752c53c0|b856d6953ce3f4e0|-1091402967||t20108.7283395436s|46dc63868fb54113|788794|qs|local|vector|||0.01||
 plot_data_discomfort|stem|06300321fee7e8a0|036f9a924ffcffd7|19dc246f6fef9a52|-1283344187||t20108.467249248s|30c13dc24067a6b1|277728|qs|local|vector|||0.03||
 plot_data_rpe|stem|a4fb6cbe824ff7b0|625121dcd0989f7f|c4215b8d9910b971|-1402168347||t20108.4662250006s|439ecfba2cb1a691|278047|qs|local|vector|||0.04||
-plot_data_tul|stem|e37ee9cf89bd8a59|df867f4085057898|e4c8423933d5c4ef|441613190||t20108.4662217252s|01f13af755182833|176094|qs|local|vector|||0||
+plot_data_tul|stem|aad7a8ca98ed5ffb|df867f4085057898|4ebaad7460f18de7|441613190||t20108.6390960518s|68e5c0ae7ef5aeb0|230028|qs|local|vector|||0.05||
 plot_preds_discomfort|stem|5a0827065ebf1034|eea6ec6d58d90be6|1cdd64c81a9f1598|1785139843||t20108.4303835907s|2befde62ff8afb17|884431|qs|local|vector|||0.05||
 plot_preds_rpe|stem|338b09a216983ed2|992ada1232823fcf|ec100dc269ff5a04|1245282270||t20108.4303874018s|61722b31040b5d82|1767123|qs|local|vector|||0.03||
-plot_preds_tul|stem|7d12be14474c80e4|a673c7017756b963|06ef7bfcfb988512|394206746||t20108.4272353864s|02f80742f6974d8d|1761894|qs|local|vector|||0.01||
-plot_preds_tul_hu|stem|0f6411fc8984df69|ffdb9ac898d4da34|40c27329521fd244|-318402520||t20108.4272291669s|207e025bfe9e496e|1814316|qs|local|vector|||0.03||
+plot_preds_tul|stem|7cbbd40f1028abf9|a673c7017756b963|64035c5120b8ffa6|394206746||t20108.7283336815s|36824756718a967f|1777865|qs|local|vector|||0.05||
+plot_preds_tul_hu|stem|633962e151c484c9|ffdb9ac898d4da34|98428cf2595873ee|-318402520||t20108.7283487633s|a10a058d0949fc8b|1799957|qs|local|vector|||0.03||
 plot_prior_sample_rpe|stem|c28bad166dde5890|57b33c6c4583aab7|d3b8e65640863a22|-1244155412||t20108.4662157246s|059ac89e10cd383f|277030|qs|local|vector|||0.01||
-plot_prior_sample_tul|stem|b62021f67502da2c|b98c47ce6d416d5f|7c7f63b15eb3aaff|147896405||t20108.4672457979s|8ab5304c93d05d9c|339143|qs|local|vector|||0.03||
+plot_prior_sample_tul|stem|a4ac736aaa1695ca|b98c47ce6d416d5f|293246c25d02cc27|147896405||t20108.5585585502s|2bc624669b229803|481801|qs|local|vector|||0.05||
 posterior_epred_hurdle_student_t|function|204d96bf3da525a8|||||||||||||||
 posterior_predict_hurdle_student_t|function|174ae340733e04d5|||||||||||||||
 pred_draws_discomfort|stem|44a090307c0df751|4a8fed4a98fded10|512938aeb4cd5ce2|-773445846||t20108.3768133017s|a464db9ce18c86c7|103952|qs|local|vector|||3.45||
 pred_draws_discomfort_hu|stem||39de37ca56e78ae1|d3614b56cc9d11cf|1071102353||t20107.4452180664s||0|qs|local|vector|||0.03||could not find function get_pred_draws_discomfort_hu
 pred_draws_rpe|stem|058e4bcb04a85f5e|68964633b535903b|1e611b28ba207116|-344379088||t20108.3787279768s|85e4279e82247dcb|202471|qs|local|vector|||2.9||
-pred_draws_tul|stem|c4715d85cd229d56|b0fa0cd7299090b8|dbf1c96ff7dd8cbd|-56985693||t20108.3776119107s|31976d0a76dc78a2|202120|qs|local|vector|||20.23||
-pred_draws_tul_hu|stem|a5f3810c303367e0|c0a9b01c6e41bc1a|7d4ea69e07a8529c|1792114504||t20108.3778011034s|ceac028d9428aec6|217573|qs|local|vector|||15.07||
+pred_draws_tul|stem|ce70fc4ebaacb095|b0fa0cd7299090b8|47378193d05363c5|-56985693||t20108.7273196925s|9067e0734bc8644e|202185|qs|local|vector|||20.09||
+pred_draws_tul_hu|stem|8bc0777c4e833ee7|c0a9b01c6e41bc1a|5b6d351c578cc4c9|1792114504||t20108.7283266642s|dcac792827f27aa7|217652|qs|local|vector|||15.08||
 prior_data|stem|d74be036fba95fe5|ba1ed3bf26acf36f|7b4fd9a41d1aceb3|-994734073||t20104.6597294163s|e23e881aa9b90b7e|75768|qs|local|vector|||0.66||
 prior_data_file|stem|5990c1bb5a048e82|825cd54eb57e9451|2c530c1562a7fbd1|-1814086319|C:/Users/james/Dropbox/Research/Kieser Australia/Supervision and TUL - Acute Study/supervision_tul/data/prior_sample_data.csv|t20104.5609267611s|b2e4a97319074935|383851|file|local|vector|||4.63||
 prior_data_rpe|stem|7dfa75239adbde23|70248cd377365f48|454e13fb483420ec|-1843036055||t20107.3774021058s|63d575472140fcf6|14043|qs|local|vector|||0.11||
@@ -74,7 +77,7 @@ prior_data_tul|stem|bc32609d983f8c17|2be15fd6d2a7b7f6|0f129495be374b92|-99714439
 prior_data_tul_file|stem|5990c1bb5a048e82|825cd54eb57e9451|2c530c1562a7fbd1|-226326432|C:/Users/james/Dropbox/Research/Kieser Australia/Supervision and TUL - Acute Study/supervision_tul/data/prior_sample_data.csv|t20104.5609267611s|b2e4a97319074935|383851|file|local|vector|||4.78||
 priors|stem|02b507cc3b1c024c|a710a32357250482|79dd8a47b5f8bb3d|-706291558||t20105.7643953711s|69ad9763a553bcd5|714|qs|local|vector|||2.86|some parameter names contain underscores term naming may be unreliable|
 priors_rpe|stem|5af56775bd017c68|55d035b3053b4b3f|96d551ab91d8ad0e|2012612775||t20107.4074042746s|7c27fc55be8b6b4d|536|qs|local|vector|||0.08|some parameter names contain underscores term naming may be unreliable|
-priors_tul|stem|e6aff8a148290ed5|a710a32357250482|85540b7bf136efcb|-1359447053||t20107.5906437331s|3555c1f2d1e0dfb2|710|qs|local|vector|||2.71|some parameter names contain underscores term naming may be unreliable|
+priors_tul|stem|3386ed2ac5963f75|a710a32357250482|791008ada9606786|-1359447053||t20108.7257444243s|d12028083a4c1f31|716|qs|local|vector|||2.52|some parameter names contain underscores term naming may be unreliable|
 read_prepare_data|function|fa1f6aa16d1ba071|||||||||||||||
 rstan|stem|19b58ec2e5619632|066d3b705f07972a|845e01c6828f73f0|1919994806||t20104.6594442806s|b0c128ee413cce30|114|qs|local|vector|||4.47||
 rstan_setup|function|d82cad57281e544d|||||||||||||||

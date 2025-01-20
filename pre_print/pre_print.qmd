@@ -1,0 +1,279 @@
+---
+articletitle: |
+  The effects of supervision upon effort during resistance training: A Bayesian analysis of prior data and an experimental study of private strength clinic members.
+# shorttitle: "Doe et al. (2022)" # usually auto-generated
+format: 
+  sportrxiv-pdf:
+    include-in-header:
+      text: |
+       \usepackage[font=scriptsize]{caption}
+author:
+  - name: James Steele
+    affiliations:
+      - ref: 1
+      - ref: 2
+      - ref: 3
+    orcid: 0000-0002-8003-0757
+    corresponding: true
+    email: james@steele-research.com
+  - name: James Fisher
+    affiliations:
+      - ref: 3
+    orcid: 0000-0002-6013-8402
+    email: james.fisher.phd@outlook.com
+  - name: Tim Dettmann
+    affiliations:
+      - ref: 1
+    email: tim.dettmann@gmail.com
+affiliations:
+      - id: 1
+        name: Kieser Australia
+      - id: 2
+        name: Steele Research Limited
+      - id: 3
+        name: Department of Sport and Health, Solent University
+abstract: |
+  Place your abstract here. Use Markdown to style the abstract, e.g. write `*word*` to print a *word* in italics. You can use the Latex command `\newline\` to create a linebreak in the abstract. \newline\ *Explanation*: The second backslash ensures that styling can be applied directly after the linebreak. This document is only a demo explaining how to use the template. This document is only a demo explaining how to use the template. This document is only a demo explaining how to use the template. This document is only a demo explaining how to use the template. This document is only a demo explaining how to use the template. This document is only a demo explaining how to use the template. This document is only a demo explaining how to use the template.
+license-type: ccby # change if neccessary
+# year: 2025 # defaults to current year
+keywords: [template, demo, exercise science] # optional
+# optional link to Supplementary Material:
+suppl-link: https://osf.io/ 
+reference-section-title: References
+printnote: "PREPRINT - NOT PEER REVIEWED" # if post print, include "POSTPRINT" then link to the published article
+bibliography: bibliography.bib  
+pdf-engine: xelatex
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r}
+library(patchwork)
+library(tidyverse)
+library(grid)
+library(kableExtra)
+
+targets::tar_config_set(store = here::here('_targets'))
+```
+
+# Introduction
+
+Recent work has highlighted the importance of supervision in optimising strength outcomes from resistance training (RT). In a recent systematic review and meta-analysis from Fisher et al. [-@fisherRoleSupervisionResistance2022a] there was a moderate standardised mean effect (0.40 \[95%CI: 0.06, 0.74\]) of supervised vs unsupervised RT on strength outcomes synthesised from ten studies. Since then, a further study has reported that even in previously trained participants there may be benefit to strength outcomes from supervision [@colemanSupervisionResistanceTraining2023].
+
+It has been speculated [@fisherRoleSupervisionResistance2022a] that an explanation for this effect may be due to the role that a trainer plays in prescribing load progression for the trainee, whereas when there is no clear load progression rule unsupervised trainees may be less likely to train with appropriate loads, and ultimately appropriate effort. Indeed, a recent meta-analysis examining the relative loads selected by trainees when given the ability to self-select highlights that they tend to choose loads which, whilst initially efficacious in novice trainees, become sub-optimal quickly as training experience progresses (\~53% of one repetition maximum \[1RM\]) particularly when combined with the typical repetition ranges prescribed i.e., \~8 to 15 repetitions [@steeleAreTraineesLifting2022]. Further, when given the opportunity to self-select load and the number of repetitions to complete there is evidence that trainees likely train with relatively low effort as determined from their proximity to momentary failure i.e., \~10 repetitions at \~53% 1RM [@steeleAreTraineesLifting2022; @nuzzoMaximalNumberRepetitions2024]). Thus, whether self-selecting a load for a typically prescribed repetition range or self-selecting a load and self-selecting the number of repetitions to perform, most will perform sets with an estimated proximity of \~10-20 repetitions shy of momentary failure.
+
+As such it has also been suggested that a supervising trainer plays the role of providing motivation and enhancing trainee effort [@fisherRoleSupervisionResistance2022a]. Indeed, recent survey studies highlight that trainees perceive supervision to have an important role in determining their motivation and resultant effort during RT which they also perceive to be important to achieve their training goals [@fisherSupervisionResistanceTraining2023; @carlsonMaleFemalePerceptions2024].
+
+However, a recent meta-analysis of the dose-response relationship of proximity to momentary failure for strength and hypertrophy outcomes highlights that, while there is increased hypertrophy with closer proximity to failure, there is not a clear relationship for strength [@robinsonExploringDoseResponse2024]. But a caveat is that there was limited data for proximities to failure \>10 repetitions, and that the models were adjusted for load (average loads were typically \~75-85% of one repetition maximum). Thus, the results of this meta-analysis apply to proximity to failure *after* selecting load (i.e., intraset effort) and a higher relative load requires a greater effort all else being equal. When considering the average self-selected load of \~53% 1RM coupled with a typical \~10 repetitions per set equating to proximities to failure \>10 repetitions [@steeleAreTraineesLifting2022] it seems plausible that unsupervised trainees may train with a less-than-optimal load, repetitions, and resultant effort to optimise strength outcomes. Ultimately, and in combination, supervision should provide trainees with feedback of their past performance, whether technical, effort- or program-based, and guidance toward their future performance (Fisher, under review).
+
+We were afforded an opportunity to examine the role of supervision on effort during RT in a unique setting with several private strength clinics whose members train either unsupervised on a "Core" membership[^1] or supervised by an exercise scientist on an "Assisted" membership. As such, using Bayesian methods, we examined samples of historical data from both types of client and in a sample of current Core members we investigated experimentally the impact of supervision from a qualified exercise scientist.
+
+[^1]: Note, Core members do have a "Review" session every twentieth session with an exercise scientist to complete strength testing, and review their training programme cards including selection of exercises and weights.
+
+# Methods
+
+```{r}
+targets::tar_load(data)
+```
+
+## Experimental approach to the problem
+
+The study was conducted at a selection of strength clinics operated by Kieser Australia recruiting from the existing pool of Core members at these locations. All Kieser Australia members are prescribed the same protocol. This consists of a single set of the resistance machine exercises prescribed on their current training programme card using a load that should permit them to reach momentary failure within a time-under-load of 90-120 seconds using a \~ 10 seconds repetition duration (i.e., \~4:4 seconds concentric:eccentric actions with a 1 isometric second hold whilst still under load with tension on the involved musculature at the end of each concentric and eccentric muscle action). Core trainees are prompted to progress load by \~5% for the next session once a time-under-load of \>120 seconds is achieved for a particular exercise before reaching momentary failure, and for Assisted trainees this is actioned by their supervising Exercise Scientist. Trainees are prompted to complete a session rating of perceived effort (RPE) at the end of their training session. An acute randomised cross-over design was employed to examine participants completing an RT session with and without direct supervision with one week apart (i.e., a Core vs Assisted session). Participants were instructed to complete a single set of the resistance machine exercises on their current training programme card using their current training loads to momentary failure. The time under load (TUL) performed, and perceptions of effort and discomfort were recorded and compared between both conditions. This study was not pre-registered and as described below the sample size was justified based on logistical concerns and the analysis is considered exploratory.
+
+In addition to the experimental study design noted above, we also took samples of Core and Assisted trainees from historical data records in Kieser Australia's database. We took separate random samples to obtain both TUL and session RPE data. There were two reasons for this. Firstly, we used this data to generate empirical informative prior distributions to use in our Bayesian modelling of the experimental study data. Secondly, they allowed us to also explore in the descriptive[^2] difference between Core and Assisted training *in situ*, but also that we could compare the prior distribution for the random sample of Core members *in situ* with the posterior distribution of Core members completing their Core session in the experimental study to understand the extent to which study effects might influence outcomes.
+
+[^2]: Note that we do not claim this difference to be a causal effect in this data given that we have not adjusted for confounders, for example that different types of people might self-select into either Core or Assisted memberships and that this might confound comparisons of either TUL or session RPE.
+
+## Participants
+
+### Experimental
+
+The study was advertised at five Kieser Australia strength clinics and we sought to recruit members who had \> 6 months prior training experience at the strength clinics, were healthy (no clinical conditions on their member record as recorded by a physiotherapist or exercise physiologist), both males and females (age +18 years), and without any current condition for which RT would be contraindicated. They were recruited from the existing client pool of Core members. We recruited a sample size based on considerations of what was logistically feasible given the availability of the exercise scientist staff at each clinic to conduct data collection and perform the supervised Assisted sessions and wanting to minimise the burden on day-to-day operation of the clinics. As such it was decided that a target of 50 participants across clinics would be acceptable. We ended up with ($k=$`r length(unique(data$id))`) participants recruited across the five clinics.
+
+### Prior Sample
+
+We queried the Kieser Australia database to generate random samples from historical data. We opted to generate reasonably large samples to ensure precise prior estimates, though did not use the entirety of the historical data (\~50000 members, \>10 years of data) so as to reduce computation time for Bayesian modelling. For TUL we limited data to Core and Assisted members training sessions that either were not led by an exercise scientist or were respectively[^3], took the first training session after at least 6 months of prior training at Kieser Australia had been completed by each member, randomly sampled 1000 Core and 1000 Assisted members and then filtered to the resistance machines used in by members in the experimental study so that we had a selection of members across varied clinic locations and completing sessions with a selection of resistance machine exercises and had TUL data for each exercise. For session RPE we performed a similar database query and randomly sampled 1000 Core and 1000 Assisted members who had reported session RPE values.
+
+[^3]: Whilst clients can have Core or Assisted memberships the former also have sessions that are supervised (i.e., their "Review" sessions noted in footnote$^1$) and the latter can have unsupervised sessions (i.e., they can attend the clinic outside of their scheduled sessions with the exercise scientist and train unsupervised). Thus we limited our sample to only normal training sessions which had been either unsupervised or supervised for both Core and Assisted members respectively.
+
+## Protocols
+
+All RT was performed using resistance machines (Kieser Training AG, Zurich, Switzerland). For the experimental study participants were instructed to attend two training sessions at least one-week apart where they completed either their current Core session (i.e., unsupervised) or an Assisted session (i.e., supervised). During the Core session the participant completed their training session as prescribed with the only difference for the Assisted session being that an exercise scientist supervised them providing instruction and motivation, however, they did not interfere in any physical way during the set (e.g. to spot or assist in completing a failing repetition). Each participant had an existing training programme card. In both conditions they utilised the current training loads for each machine that were recorded in the last session of their training programme card prior to participation in the study. Participants were instructed to ensure that they continue performing the exercise to momentary failure independently of the time-under-load achieved for the purposes of the study i.e., if they realised during the set that their prior load selection was evidently too low for the prescribed TUL range they should continue to momentary failure regardless off the TUL. Momentary failure was defined as per Steele et al. [-@steeleClarityReportingTerminology2017] i.e., the point at which, despite their greatest effort, participants are unable to continue concentrically contracting and moving the resistance, and this was communicated to the participants. During each session for each exercise the trainees/trainers recorded their time-under-load achieved as they would do for their usual sessions using timers situated around the clinic in view during training specifically for this purpose. In addition, they recorded their perceptions of effort and discomfort in that order immediately upon completing the exercise using previously validated scales for differentiating these perceptions [@steeleDifferentiationPerceivedEffort2017]; scripts and scales are available here: [https://osf.io/ufvy8/](https://osf.io/ufvy8/).
+
+The data generated from the sample of historical members was generated according to the standard protocol described above that all Kieser Australia members are prescribed. TUL was also recorded similarly using timers available about the clinic, r for some sessions using a more recently developed mobile phone application (Kieser Konnect, Kieser Australia) which has placed on a stand on the resistance machines and used to track TUL for each exercise in their training card which is programmed to the application. Session RPE was recorded using either the mobile application for Core members, or via the application used by staff during Assisted sessions and used a modified version of the Borg 6-20 scale with...
+
+## Statistical Analysis
+
+```         
+    UPDATE LINKS!!!!!!!!
+```
+
+All code utilised for data preparation and analyses are available in either the Open Science Framework page for this project <https://osf.io/dqwh5/> or the corresponding GitHub repository <https://github.com/jamessteeleii/self_talk_meta_analysis_update>. We cite all software and packages used in the analysis pipeline using the `grateful` package [@rodriguez-sanchezGratefulFacilitateCitation2023] which can be seen here: <https://osf.io/ftajc>.
+
+As noted, the project was not pre-registered but involved exploratory analysis of the experimental and prior datasets. All analyses have been conducted within a Bayesian framework and all posterior estimates and their precision, along with conclusions based upon them, are interpreted continuously and probabilistically, considering priors, data quality, and all within the context of each outcome and the assumptions of the model employed as the estimator [@kruschkeBayesianNewStatistics2018]. All models were run with 2000 warmup and 2000 sampling iterations and four Monte Carlo Markov Chains. Trace plots were produced along with $\hat{R}$ values to examine whether chains had converged, and posterior predictive checks for each model were also examined to understand the model implied distributions. We fit two sets of models for the TUL and RPE outcomes, one on the prior sample of data using weakly regularising priors in order to generate posterior distributions to inform the priors used in the other model using the experimental data, and a single model on the experimental data for the rating of perceived discomfort outcome using weakly regularising priors. These models are described below. For all models we calculated average marginal effects as the global grand means for both predictions under each condition as well as contrasts between conditions and visualise both prior and posterior distributions along with mean and 95% quantile estimates from these. 
+
+### Time Under Load Analysis
+
+Upon inspecting the raw distribution of the prior sample of data for TUL we noticed that there was a spike at 120 seconds concomitant with the top of the target TUL range prescribed to members under both Core and Assisted conditions (ADD LINK). Anecdotal reports from Kieser Australia staff had also prior to exploring the data suggested to us that, despite the prescription to train to momentary failure, many Core members were instead selecting loads and training only to the upper 120 second TUL range threshold irrespective of proximity to failure. We did not however expect this to be the same for the prior sample of Assisted members. As such, it suggested to us that there might be two processes underlying the observed data: a tendency to target a specific TUL threshold and to stop the exercise at that point, or to otherwise continue the exercise to momentary failure (or to stop the exercise based on some other process such as tolerable proximity to failure). Thus, we opted to use a hurdle type model comprising a Bernoulli distribution for the probability of having a TUL of 120 seconds, and a student $t$ distribution for all other values of TUL[^4]. We expected this may also be the case in our experimental dataset given we recruited Core members and so utilised the same type of model for this. As such this allowed us to examine both the expectations of the global grand mean for TUL, in addition to the probabilities of having a TUL of 120 seconds. 
+
+[^4]: A custom family for the hurdle-student $t$ model was produced for use with the `brms` R package, adapted from the hurdle-normal distribution developed by Heiss [-@heissGuideModelingOutcomes].
+
+For both the prior sample and experimental study data the following model was employed which included a fixed (i.e., population level) effect for the session type, Core or Assisted, where Assisted was coded as the intercept. The model also included random (i.e., cluster or group level) effects as intercepts for the location (i.e., the clinic the session was performed at), the member id, and the resistance machine used (note, due to the cross-over nature of the experimental design the random effects for location, member, and machine were modelled as nested in this dataset). These fixed and random effects were modelled as predictors for both the hurdle and student $t$ components of the model. TUL was centred at zero for modelling (i.e., all values of TUL$_i$ has 120 subtracted from them prior to modelling). Formally the model(s) were as follows:
+
+$$
+\begin{aligned}
+& \textbf{Hurdle model of}\ i^{th}\ \textbf{TUL across condition}\ c\  \textbf{within}\ j^{th}\ \textbf{location,}\ k^{th}\ \textbf{member, and}\ l^{th} \textbf{ machine} \\
+\text{TUL}_{ic} &\sim \operatorname{Hurdle\,log-student}t(\pi_{ic_{j[i],k[i],l[i]}}, \nu_y, \mu_{ic_{j[i],k[i],l[i]}}, \sigma_y) \ ...\ \text{or alternatively,} \\
+\text{TUL}_{ic} &\sim
+\begin{Bmatrix}
+0 & \text{with probability } \pi_{ic_{j[i],k[i],l[i]}} \\[4pt]
+\operatorname{Student}t(\mu_{ic_{j[i],k[i],l[i]}}, \nu_y, \sigma_y) & \text{with probability } 1 - \pi_{ic_{j[i],k[i],l[i]}}
+\end{Bmatrix}
+\\
+\\
+& \textbf{Models for distribution parameters} \\
+\operatorname{logit}(\pi_{ic}) &= (\gamma_0 + \gamma_{0_{j[i],k[i],l[i]}}) + \gamma_1 \text{Condition}_{ic} & \text{120 seconds/not-120 seconds process} \\[4pt]
+\mu_{ic} &= (\beta_0 + b_{0_{j[i],k[i],l[i]}}) + \beta_1\text{Condition}_{ic} & \text{Location parameter in student}\ t\ \text{process} \\[4pt]
+\gamma_{0_j} &\sim \mathcal{N}(0, \sigma_{\gamma_{0_{j}}}), \text{for location j} = 1,\ ...,\text{J} & \text{Variation in intercepts for location in hurdle model} \\[4pt]
+\gamma_{0_k} &\sim \mathcal{N}(0, \sigma_{\gamma_{0_{k}}}), \text{for member k} = 1,\ ...,\text{K} & \text{Variation in intercepts for member in hurdle model} \\[4pt]
+\gamma_{0_l}, &\sim \mathcal{N}(0, \sigma_{\gamma_{0_{l}}}), \text{for machine l} = 1,\ ...,\text{L} & \text{Variation in intercepts for machine  in hurdle model} \\[4pt]
+b_{0_j} &\sim \mathcal{N}(0, \sigma_{b_{0_{j}}}), \text{for location j} = 1,\ ...,\text{J} & \text{Variation in intercepts for location in student}\ t\ \text{model model} \\[4pt]
+b_{0_k} &\sim \mathcal{N}(0, \sigma_{b_{0_{k}}}), \text{for member k} = 1,\ ...,\text{K} & \text{Variation in intercepts for member in student}\ t\ \text{model model} \\[4pt]
+b_{0_l} &\sim \mathcal{N}(0, \sigma_{b_{0_{l}}}), \text{for machine l} = 1,\ ...,\text{L} & \text{Variation in intercepts for machine  in student}\ t\ \text{model model} \\[4pt]
+\\
+\end{aligned}
+$$ {#eq-hurdle-model}
+Weakly regularising priors were employed for prior sample dataset. These were the default priors in the `brms` package for all intercept terms which are scaled to the expected response value when all predictors are at their means and use a student $t$ distribution with degrees of freedom $\nu=3$, and variance terms similarly scaled with $\mu=0$. The only change to this was to set reasonable upper and lower bounds for the prior condition effects to limit prediction of impossible TUL values. The priors were as follows:
+
+$$
+\begin{aligned}
+& \textbf{Priors (prior sample model)} \\
+\gamma_0 &\sim \text{Logistic}(2, 0.1) & \text{Prior for intercept in hurdle model i.e., Assisted condition} \\
+\beta_0 &\sim \text{Student}\ t(3, 3, 13.3) & \text{Prior for intercept in student}\ t\ \text{model i.e., Assisted condition} \\
+\gamma_1,\beta_1 &\sim \text{Student}\ t(3, 0, 15, \text{lb}=-60, \text{lb}=60) & \text{Prior for Condition effects in both models i.e., Core minus Assisted condition} \\
+\sigma_y,\sigma_{\gamma_{0_{j}}},\sigma_{\gamma_{0_{k}}},\sigma_{\gamma_{0_{l}}},\sigma_{b_{0_{j}}},\sigma_{b_{0_{k}}},\sigma_{b_{0_{l}}} \ &\sim \text{Student}\ t(3, 0, 13.3, \text{lb}=0) & \text{Prior for all variability parameters} \\
+\nu_y &\sim \text{Gamma}(2,1) & \text{Prior for student}\ t\ \text{degrees of freedom} \\
+\end{aligned}
+$$ {#eq-hurdle-prior}
+
+We then took posterior parameter estimates from the prior sample model and used these to generate informative priors for the experimental data models which were as follows:
+
+$$
+\begin{aligned}
+& \textbf{Priors (experimental data model)} \\
+\gamma_0 &\sim \text{Student}\ t(3.28, -3.03, 0.12) & \text{Prior for intercept in hurdle model i.e., Assisted condition} \\
+\beta_0 &\sim \text{Student}\ t(3.28, 2.79, 1.30) & \text{Prior for intercept in student}\ t\ \text{model i.e., Assisted condition} \\
+\gamma_1 &\sim \text{Student}\ t(3.28, -0.19, 0.11) & \text{Prior for Condition effects in hurdle model i.e., Core minus Assisted condition} \\
+\beta_1 &\sim \text{Student}\ t(3.28, 0.07, 0.58) & \text{Prior for Condition effects in student}\ t\ \text{model i.e., Core minus Assisted condition} \\
+\sigma_y &\sim \text{Student}\ t(3, 10.59, 0.19, \text{lb}=0) & \text{Prior for residual variability parameter} \\
+\sigma_{\gamma_{0_{j}}} &\sim \text{Student}\ t(3, 0.31, 0.08, \text{lb}=0) & \text{Prior for location variability parameter in hurdle model} \\
+\sigma_{\gamma_{0_{k}}} &\sim \text{Student}\ t(3, 1.16, 0.07, \text{lb}=0) & \text{Prior for member variability parameter in hurdle model} \\
+\sigma_{\gamma_{0_{l}}} &\sim \text{Student}\ t(3, 0.15, 0.08, \text{lb}=0) & \text{Prior for machine variability parameter in hurdle model} \\
+\sigma_{b_{0_{j}}} &\sim \text{Student}\ t(3, 3.43, 0.62, \text{lb}=0) & \text{Prior for location variability parameter in student}\ t\ \text{model} \\
+\sigma_{b_{0_{k}}} &\sim \text{Student}\ t(3, 10.2, 0.23, \text{lb}=0) & \text{Prior for member variability parameter in student}\ t\ \text{model} \\
+\sigma_{b_{0_{l}}} &\sim \text{Student}\ t(3, 3.72, 0.93, \text{lb}=0) & \text{Prior for machine variability parameter in student}\ t\ \text{model} \\
+\nu_y &\sim \text{Gamma}(2,1) & \text{Prior for student}\ t\ \text{degrees of freedom} \\
+\end{aligned}
+$$ {#eq-hurdle-prior-exp}
+
+### Rating of Perceived Effort and Discomfort Analysis
+
+Despite the use of two different scales and protocols for data collection of perception of effort in our samples i.e., a session RPE using the 6-20 Borg scale for the prior sample and immediately post each exercise RPE using a 0-10 scale, both scales were anchored at their limits as in essence no effort (6 or 0) or maximal effort (20 or 10). As such, and as the intention was to utilise the prior sample data to assist in producing empirical prior distributions for our experimental data models, we opted to rescale both outcomes to lie on the $(0,1)$ interval such that they reflected the percent effort that was reported as perceived [@steeleWhatPerceptionEffort2020]. We then employed an ordered beta regression model [@kubinecOrderedBetaRegression2022] which employs a cutpoint process similar to ordered logistic models in order to model both the continuous responses on the $(0,1)$ interval reflecting some effort though not maximal, and the degenerate response on the bounds $[0,1]$ reflecting both no and maximal effort respectively. We approached the rating of perceived discomfort similarly as this scale was also anchored between no discomfort and the maximum imaginable. 
+
+For both the prior sample and experimental study data the following model was employed which included a fixed (i.e., population level) effect for the session type, Core or Assisted, where Assisted was coded as the intercept. The model also included random (i.e., cluster or group level) effects as intercepts for the location (i.e., the clinic the session was performed at), the member id, and the resistance machine used for the experimental data model only (note, due to the session RPE reported in the prior sample data and that we sampled only one session we do not have member or machine random effects, and due to the cross-over nature of the experimental design the random effects for location, member, and machine were modelled as nested in this dataset). These fixed and random effects were modelled as predictors for both the mean and precision parameters of the ordered beta regression model. As noted, RPE in both datasets was rescaled to lie on the $(0,1)$ interval. Formally the model(s) were as follows (note that the model for the prior dataset omits the random effect for machine):
+
+
+$$
+\begin{aligned}
+& \textbf{Ordered beta regression model of}\ i^{th}\ \textbf{RPE across condition}\ c\  \textbf{within}\ j^{th}\ \textbf{location,}\ k^{th}\ \textbf{member, and}\ l^{th} \textbf{ machine} \\
+\text{RPE}_{ic} &\sim
+\begin{Bmatrix}
+0 & \text{with probability } \alpha_{ic_{j[i],k[i],l[i]}} \\[4pt]
+\in (0,1) & \text{with probability } \delta_{ic_{j[i],k[i],l[i]}} \\[4pt]
+1 & \text{with probability } \gamma_{ic_{j[i],k[i],l[i]}} \\[4pt]
+\end{Bmatrix}
+\\
+\\
+\text{logit}(\alpha_{ic}) &= 1-(X'\beta-k_1) & \text{Probability of obtaining a 0} \\[4pt]
+\text{logit}(\delta_{ic}) &= \bigr[(X'\beta-k_1) - (X'\beta-k_2)\bigr]\text{Beta}(X'\beta, X'
+\beta_\phi) & \text{Probability of obtaining a value between 0 and 1} \\[4pt]
+\text{logit}(\gamma_{ic}) &= (X'\beta-k_2) & \text{Probability of obtaining a 1} \\[4pt]
+\\
+X'\beta&=(\beta_0 + b_{0_{j[i],k[i],l[i]}}) + \beta_1 \text{Condition}_{ic} & \text{Vector of predictors} \\[4pt] 
+b_{0_j} &\sim \mathcal{N}(0, \sigma_{b_{0_{j}}}), \text{for location j} = 1,\ ...,\text{J} & \text{Variation in intercepts for location in student}\ t\ \text{model model} \\[4pt]
+b_{0_k} &\sim \mathcal{N}(0, \sigma_{b_{0_{k}}}), \text{for member k} = 1,\ ...,\text{K} & \text{Variation in intercepts for member in student}\ t\ \text{model model} \\[4pt]
+b_{0_l} &\sim \mathcal{N}(0, \sigma_{b_{0_{l}}}), \text{for machine l} = 1,\ ...,\text{L} & \text{Variation in intercepts for machine  in student}\ t\ \text{model model} \\[4pt]
+X'\beta_\phi&=(\beta_{\phi0} + b_{\phi0_{j[i],k[i],l[i]}}) + \beta_{\phi1} \text{Condition}_{ic} & \text{Vector of predictors} \\[4pt] 
+b_{\phi0_j} &\sim \mathcal{N}(0, \sigma_{b_{\phi0_{j}}}), \text{for location j} = 1,\ ...,\text{J} & \text{Variation in intercepts for location in student}\ t\ \text{model model} \\[4pt]
+b_{\phi0_k} &\sim \mathcal{N}(0, \sigma_{b_{\phi0_{k}}}), \text{for member k} = 1,\ ...,\text{K} & \text{Variation in intercepts for member in student}\ t\ \text{model model} \\[4pt]
+b_{\phi0_l} &\sim \mathcal{N}(0, \sigma_{b_{\phi0_{l}}}), \text{for machine l} = 1,\ ...,\text{L} & \text{Variation in intercepts for machine  in student}\ t\ \text{model model} \\[4pt]
+\\
+\end{aligned}
+$$ {#eq-ordbeta-model}
+
+Weakly regularising priors were employed for prior sample dataset. These were the default priors in the `ordbetareg` package for all intercept terms which are scaled to the expected response value when all predictors are at their means and use a student $t$ distribution with degrees of freedom $\nu=3$, and variance terms similarly scaled with $\mu=0$. We left the flat prior on the fixed effect for condition given we were primarily interested in letting the prior dataset speak for itself in generating a posterior distribution to use as prior in the experimental data model. As noted, the prior sample model only included the random effects for location. The priors were as follows:
+
+$$
+\begin{aligned}
+& \textbf{Priors (prior sample model)} \\
+\beta_0 &\sim \text{Student}\ t(3, 0.6, 2.5) & \text{Prior for intercept of mean parameter i.e., Assisted condition} \\
+\beta_{\phi0} &\sim \text{Student}\ t(3, 0, 2.5) & \text{Prior for intercept of precision parameter i.e., Assisted condition} \\
+\beta_1,\beta_{\phi1} &\sim \text{Uniform}(\text{lb}=-\infty,u=\infty) & \text{Prior for Condition effects in both location and precision parameters i.e., Core minus Assisted condition} \\
+\sigma_{b_{0_{j}}},\sigma_{b_{\phi0_{j}}} \ &\sim \text{Student}\ t(3, 0, 2.5, \text{lb}=0) & \text{Prior for location variability parameters} \\
+k_1,k_2 &\sim \text{Induced dirichlet}(1,1,1) & \text{Prior for cutpoint probabilities} \\
+\end{aligned}
+$$ {#eq-ordbeta-prior}
+
+We then took posterior parameter estimates from the prior sample model and used these to generate informative priors for the experimental data model which were as follows:
+
+$$
+\begin{aligned}
+& \textbf{Priors (experimental sample model)} \\
+\beta_0 &\sim \text{Student}\ t(3, 0.35, 0.05) & \text{Prior for intercept of mean parameter i.e., Assisted condition} \\
+\beta_{\phi0} &\sim \text{Student}\ t(3, 2.01, 0.07) & \text{Prior for intercept of precision parameter i.e., Assisted condition} \\
+\beta_1 &\sim \text{Student}\ t(3, -0.24, 0.04) & \text{Prior for Condition effects in mean parameter i.e., Core minus Assisted condition} \\
+\beta_{\phi1} &\sim \text{Student}\ t(3, -0.48, 0.06) & \text{Prior for Condition effects in precision parameter i.e., Core minus Assisted condition} \\
+\sigma_{b_{0_{j}}} \ &\sim \text{Student}\ t(3, 0.19, 0.04, \text{lb}=0) & \text{Prior for location variability parameters} \\
+\sigma_{b_{\phi0_{j}}} \ &\sim \text{Student}\ t(3, 0.26, 0.05, \text{lb}=0) & \text{Prior for all other variability parameters} \\
+\sigma_{b_{0_{k}}},\sigma_{b_{0_{l}}},\sigma_{b_{\phi0_{k}}},\sigma_{b_{\phi0_{l}}} \ &\sim \text{Student}\ t(3, 0, 2.5, \text{lb}=0) & \text{Prior for all variability parameters} \\
+k_1,k_2 &\sim \text{Induced dirichlet}(1,1,1) & \text{Prior for cutpoint probabilities} \\
+\end{aligned}
+$$ {#eq-ordbeta-prior-exp}
+
+We did not have prior sample data for rating of perceived discomfort and so for this outcome we used the same model as above for the RPE outcomes but with wholly default weakly regularising priors.
+
+# Results
+
+ADD NO OBS FOR DATASETS
+
+## Time Under Load 
+
+## Rating of Perceived Effort and Discomfort
+
+# Contributions
+
+Authors should report the contributions of each author in the a specific contribution section based on the guidelines set forth by the International Committee of Medical Journal Editors.
+
+Please indicate author contributions as clearly as possible, according to the following criteria:
+
+-   Substantial contributions to conception and design
+-   Acquisition of data
+-   Analysis and interpretation of data
+-   Drafting the article or revising it critically for important intellectual content
+-   Final approval of the version to be published
+
+# Acknowledgements
+
+People who contributed to the work but do not fit our author criteria should be listed in the acknowledgements, along with their contributions. You must ensure that anyone named in the acknowledgements agrees to being so named.
+
+Funding sources should not be included in the acknowledgements, but in the section below.
+
+# Funding Information
+
+Please provide a list of the sources of funding, as well as the relevant grant numbers, where possible. List the authors associated with specific funding sources. You will also enter this information in a form during the submission process, but it must be repeated here.
+
+# Data and Supplementary Material Accessibility
+
+This should list the database(s) and, if appropriate, the respective accession numbers and DOIs for all data or supplementary material for the manuscript that has been made publicly available on a trusted digital repository. If no data, code, or supplementary material are available for this manuscript then the reason for this should be explained here.

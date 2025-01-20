@@ -70,10 +70,10 @@ fit_model_prior_sample_tul <-
       ),
       family = hurdle_student_t,
       stanvars = stan_vars,
-      # prior = c(
-      #   # set wide but constrained priors for just the fixed student t effects to realistic range for posterior predictions
-      #   set_prior("student_t(3, 0, 15)", class = "b", lb = -60, ub = 60)
-      # ),
+      prior = c(
+        # set wide but constrained priors for just the fixed effects
+        set_prior("student_t(3, 0, 15)", class = "b", lb = -60, ub = 60)
+      ),
       data = data,
       chains = 4,
       cores = 4,
@@ -579,6 +579,7 @@ make_plot_prior_sample_tul <- function(data) {
                linewidth = 0.25
     ) +
     geom_histogram(binwidth = 1, alpha = 0.5) +
+    scale_x_continuous(breaks = seq(60,180,10)) +
     facet_grid(core_assisted ~ .) +
     labs(x = "Time Under Load (seconds)") +
     theme_classic(base_size = 8) +
@@ -614,6 +615,7 @@ make_plot_data_tul <- function(data) {
       alpha = 0.5,
       linewidth = 0.25
     ) + 
+    scale_y_continuous(breaks = seq(60,600,30)) +
     labs(x = "Condition",
          y = "Time Under Load (Seconds)") +
     theme_classic(base_size = 8)
@@ -742,7 +744,7 @@ make_plot_combined_data <- function(plot1, plot2, plot3, plot4, plot5) {
   ) +
     plot_annotation(title = "Current Experimental Data Distributions",
                     subtitle = "Time Under Load, Rating of Perceived Effort, and Rating of Perceived Discomfort") +
-    plot_layout(axes = "collect")
+    plot_layout(axes = "collect_x")
   
   
   wrap_elements(prior_plots) / wrap_elements(data_plots) 
@@ -787,7 +789,7 @@ make_plot_preds_tul <- function(pred_draws) {
     ) +
     scale_color_manual(values = c("#56B4E9", "#E69F00"), limits = rev) +
     scale_fill_manual(values = c("#56B4E9", "#E69F00"), limits = rev) +
-    scale_x_continuous(limits = c(60, 180)) +
+    scale_x_continuous(limits = c(60, 180), breaks = seq(60,180,10)) +
     labs(
       y = "Condition",
       x = "Time Under Load (Seconds)",

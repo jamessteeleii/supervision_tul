@@ -14,7 +14,9 @@ tar_option_set(
     "brms",
     "ordbetareg",
     "bayesplot",
+    "ggdist",
     "tidybayes",
+    "marginaleffects",
     "rstan",
     "patchwork",
     "here",
@@ -31,7 +33,7 @@ tar_option_set(
 tar_source("R/functions.R")
 
 list(
-  # Read and prepare sample of prior client data
+  # Read and prepare sample of prior client data -----
   tar_target(
     prior_data_tul_file,
     here("data", "prior_sample_data.csv"),
@@ -39,7 +41,8 @@ list(
   ),
   tar_target(
     prior_data_tul, 
-    read_prepare_data(prior_data_tul_file)
+    read_prepare_data(prior_data_tul_file) |>
+      mutate(across(2:5, as.factor))
   ),
   
   tar_target(
@@ -49,10 +52,11 @@ list(
   ),
   tar_target(
     prior_data_rpe, 
-    read_csv(prior_data_rpe_file)
+    read_csv(prior_data_rpe_file) |>
+      mutate(across(2:4, as.factor))
   ),
   
-  # Read and prepare study data
+  # Read and prepare study data ----- 
   tar_target(
     data_file,
     here("data", "data.csv"),
@@ -60,16 +64,17 @@ list(
   ),
   tar_target(
     data, 
-    read_prepare_data(data_file)
+    read_prepare_data(data_file) |>
+      mutate(across(2:5, as.factor))
   ),
   
-  # Setup rstan to run chains in parallel
+  # Setup rstan to run chains in parallel -----
   tar_target(
     rstan, 
     rstan_setup()
   ),
   
-  # Setup custom hurdle_student_t family
+  # Setup custom hurdle_student_t family -----
   tar_target(
     hurdle_student_t, 
     hurdle_student_t_setup()
@@ -83,7 +88,7 @@ list(
     stan_vars_setup(stan_funs)
   ),
   
-  # Fit prior models
+  # Fit prior models -----
   tar_target(
     model_prior_sample_tul,
     fit_model_prior_sample_tul(prior_data_tul, stan_vars, hurdle_student_t)
@@ -93,14 +98,147 @@ list(
     fit_model_prior_sample_rpe(prior_data_rpe)
   ),
   
-  # Fit experimental models
+  # Fit experimental models -----
   tar_target(
-    priors,
+    priors_tul,
     set_priors_tul(model_prior_sample_tul)
   ),
   tar_target(
     model_tul,
-    fit_model_tul(data, stan_vars, hurdle_student_t, priors)
-  )
+    fit_model_tul(data, stan_vars, hurdle_student_t, priors_tul)
+  ),
   
+  tar_target(
+    priors_rpe,
+    set_priors_rpe(model_prior_sample_rpe)
+  ),
+  tar_target(
+    model_rpe,
+    fit_model_rpe(data, priors_rpe)
+  ),
+  
+  tar_target(
+    model_discomfort,
+    fit_model_discomfort(data)
+  ),
+  
+  # Model post procession -----
+  tar_target(
+    pred_draws_tul,
+    get_pred_draws_tul(model_tul, model_prior_sample_tul)
+  ),
+  
+  tar_target(
+    pred_draws_tul_hu,
+    get_pred_draws_tul_hu(model_tul, model_prior_sample_tul)
+  ),
+  
+  tar_target(
+    contrast_draws_tul,
+    get_contrast_draws_tul(model_tul, model_prior_sample_tul)
+  ),
+  
+  tar_target(
+    contrast_draws_tul_hu,
+    get_contrast_draws_tul_hu(model_tul, model_prior_sample_tul)
+  ),
+  
+  tar_target(
+    pred_draws_rpe,
+    get_pred_draws_rpe(model_rpe, model_prior_sample_rpe)
+  ),
+  
+  tar_target(
+    contrast_draws_rpe,
+    get_contrast_draws_rpe(model_rpe, model_prior_sample_rpe)
+  ),
+  
+  tar_target(
+    pred_draws_discomfort,
+    get_pred_draws_discomfort(model_discomfort)
+  ),
+  
+  tar_target(
+    contrast_draws_discomfort,
+    get_contrast_draws_discomfort(model_discomfort)
+  ),
+  
+  # Plotting data and results -----
+  
+  # Data plots
+  tar_target(
+    plot_prior_sample_tul,
+    make_plot_prior_sample_tul(prior_data_tul)
+  ),
+  tar_target(
+    plot_data_tul,
+    make_plot_data_tul(data)
+  ),
+  tar_target(
+    plot_prior_sample_rpe,
+    make_plot_prior_sample_rpe(prior_data_rpe)
+  ),
+  tar_target(
+    plot_data_rpe,
+    make_plot_data_rpe(data)
+  ),
+  tar_target(
+    plot_data_discomfort,
+    make_plot_data_discomfort(data)
+  ),
+  
+  tar_target(
+    plot_combined_data,
+    make_plot_combined_data(plot_prior_sample_tul, plot_prior_sample_rpe,
+                            plot_data_tul, plot_data_rpe, plot_data_discomfort)
+  ),
+  
+  # Model results plots
+  tar_target(
+    plot_preds_tul,
+    make_plot_preds_tul(pred_draws_tul)
+  ),
+  tar_target(
+    plot_contrasts_tul,
+    make_plot_contrasts_tul(contrast_draws_tul)
+  ),
+  
+  tar_target(
+    plot_preds_tul_hu,
+    make_plot_preds_tul_hu(pred_draws_tul_hu)
+  ),
+  tar_target(
+    plot_contrasts_tul_hu,
+    make_plot_contrasts_tul_hu(contrast_draws_tul_hu)
+  ),
+  
+  tar_target(
+    plot_combined_tul,
+    make_plot_combined_tul(plot_preds_tul, plot_contrasts_tul,
+                           plot_preds_tul_hu, plot_contrasts_tul_hu)
+  ),
+  
+  tar_target(
+    plot_preds_rpe,
+    make_plot_preds_rpe(pred_draws_rpe)
+  ),
+  tar_target(
+    plot_contrasts_rpe,
+    make_plot_contrasts_rpe(contrast_draws_rpe)
+  ),
+  
+  tar_target(
+    plot_preds_discomfort,
+    make_plot_preds_discomfort(pred_draws_discomfort)
+  ),
+  tar_target(
+    plot_contrasts_discomfort,
+    make_plot_contrasts_discomfort(contrast_draws_discomfort)
+  ),
+  
+  tar_target(
+    plot_combined_rpe_discomfort,
+    make_plot_combined_rpe_discomfort(plot_preds_rpe, plot_contrasts_rpe,
+                           plot_preds_discomfort, plot_contrasts_discomfort)
+  )
 )

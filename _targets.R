@@ -154,6 +154,11 @@ list(
   ),
   
   tar_target(
+    pred_draws_rpe_phi,
+    get_pred_draws_rpe_phi(model_rpe, model_prior_sample_rpe)
+  ),
+  
+  tar_target(
     pred_draws_discomfort,
     get_pred_draws_discomfort(model_discomfort)
   ),
@@ -161,6 +166,11 @@ list(
   tar_target(
     contrast_draws_discomfort,
     get_contrast_draws_discomfort(model_discomfort)
+  ),
+  
+  tar_target(
+    pred_draws_discomfort_phi,
+    get_pred_draws_discomfort_phi(model_discomfort)
   ),
   
   # Plotting data and results -----

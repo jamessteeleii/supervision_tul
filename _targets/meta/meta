@@ -15,7 +15,9 @@ get_contrast_draws_rpe|function|53e6887a1eb8dd27|||||||||||||||
 get_contrast_draws_tul|function|e7eb7ac0560037dc|||||||||||||||
 get_contrast_draws_tul_hu|function|24e17e79eb6c7402|||||||||||||||
 get_pred_draws_discomfort|function|4bec1de53a6cc9a5|||||||||||||||
+get_pred_draws_discomfort_phi|function|f8acec9e0f9075d2|||||||||||||||
 get_pred_draws_rpe|function|199e4d26d639b00e|||||||||||||||
+get_pred_draws_rpe_phi|function|61df9e3a7b5b8031|||||||||||||||
 get_pred_draws_tul|function|f769fc1cec0749f8|||||||||||||||
 get_pred_draws_tul_hu|function|f6985976dd394f88|||||||||||||||
 hurdle_student_t|stem|88febcc959676bee|99d53633fe833ba1|fec10c0fbfdf7d8b|2063339794||t20104.659446836s|b252084a240eec72|455|qs|local|vector|||0||
@@ -32,6 +34,7 @@ make_plot_data_rpe|function|23c329f4017aeb66|||||||||||||||
 make_plot_data_tul|function|9f0d294d918dda6f|||||||||||||||
 make_plot_preds_discomfort|function|91cb6d5070f7737a|||||||||||||||
 make_plot_preds_rpe|function|c038b0620e28e948|||||||||||||||
+make_plot_preds_rpe_phi|function|c3c1f8617eefecfa|||||||||||||||
 make_plot_preds_tul|function|e9e629960c8b5e93|||||||||||||||
 make_plot_preds_tul_hu|function|73c016b3337edc4b|||||||||||||||
 make_plot_prior_sample_rpe|function|fd2bb17cdd1bfaff|||||||||||||||
@@ -45,8 +48,8 @@ model_rpe|stem|a7f574423849ab81|83dd51485b8de557|95acbf713f35b569|-501003324||t2
 model_tul|stem|6dd8de337abd416e|aa218c0222d16c2d|d66567611e876680|-1938942288||t20108.7270745826s|58dfb8fde93f809b|45336663|qs|local|vector|||114.29||
 plot_combined_data|stem|a31b01975f2179e0|e94b5dbbed281056|80a6a7c814c856d9|671039339||t20108.6391013419s|f64c6247d59fb1bd|1570530|qs|local|vector|||0.01||
 plot_combined_data_tiff|stem|f687273e27896985|ff0fa2d420063240|286fa22f334c2b86|1646967051||t20108.6416626388s|8781e7d3a4a21eb4|105|qs|local|vector|||1.07||
-plot_combined_rpe_discomfort|stem|6dad9bc7a651365a|d93694ddbc872064|ae5804ad4a5df4af|-407254408||t20109.454760971s|8bf5618ef7b7e5a2|4061028|qs|local|vector|||0.02||
-plot_combined_rpe_discomfort_tiff|stem|9210a455d0eade83|5f19a9189b94f5cb|54f1e94c3fbc6af3|-1463255941||t20109.4547894557s|2159cf38e38ad193|115|qs|local|vector|||1.53|Removed 2 rows containing missing values or values outside the scale rangegeom_vline.. Removed 2 rows containing missing values or values outside the scale rangegeom_vline.|
+plot_combined_rpe_discomfort|stem|c072da407c694b85|d93694ddbc872064|29da8c14624c65ce|-407254408||t20109.7139984457s|78c566af908ad362|4059955|qs|local|vector|||0.02||
+plot_combined_rpe_discomfort_tiff|stem|9210a455d0eade83|5f19a9189b94f5cb|eb026d9e9aab036b|-1463255941||t20109.7140175083s|2159cf38e38ad193|115|qs|local|vector|||1.25|Removed 2 rows containing missing values or values outside the scale rangegeom_vline.. Removed 2 rows containing missing values or values outside the scale rangegeom_vline.|
 plot_combined_tul|stem|dec89a8814ccf672|4e40e0c5fa6b96b0|b28bab79ddb5c729|-1312985950||t20109.4547674775s|29d7d390b049a31f|5551221|qs|local|vector|||0.01||
 plot_combined_tul_tiff|stem|c49485de2d936009|a82999e8f2fb55c8|b62bf1a6353f3e6f|1342543929||t20109.4548099595s|da7f33a0f827466a|104|qs|local|vector|||1.36|Removed 17 rows containing missing values or values outside the scale rangestat_slabinterval.. Removed 2 rows containing missing values or values outside the scale rangegeom_vline.|
 plot_contrasts_discomfort|stem|89482a328d1ad802|bd8f5d81b01260bc|0ef0dd06162ddea8|1270957714||t20109.4547349868s|60d17dd99998e267|531131|qs|local|vector|||0.01||
@@ -56,7 +59,7 @@ plot_contrasts_tul_hu|stem|ec54efa41071db18|1cfdfcfc752c53c0|c09eb91c38314658|-1
 plot_data_discomfort|stem|06300321fee7e8a0|036f9a924ffcffd7|19dc246f6fef9a52|-1283344187||t20108.467249248s|30c13dc24067a6b1|277728|qs|local|vector|||0.03||
 plot_data_rpe|stem|a4fb6cbe824ff7b0|625121dcd0989f7f|c4215b8d9910b971|-1402168347||t20108.4662250006s|439ecfba2cb1a691|278047|qs|local|vector|||0.04||
 plot_data_tul|stem|aad7a8ca98ed5ffb|df867f4085057898|4ebaad7460f18de7|441613190||t20108.6390960518s|68e5c0ae7ef5aeb0|230028|qs|local|vector|||0.05||
-plot_preds_discomfort|stem|e45e79eec0e05a21|eea6ec6d58d90be6|773c18077776b4d3|1785139843||t20109.4547318385s|a255d35d1da2718b|768052|qs|local|vector|||0.04||
+plot_preds_discomfort|stem|8a7c7fb8be5372e6|eea6ec6d58d90be6|773c18077776b4d3|1785139843||t20109.713784888s|470dcfaec1707684|772220|qs|local|vector|||0.03||
 plot_preds_rpe|stem|f530984bc373bd4b|992ada1232823fcf|eaae7a5b914ae80a|1245282270||t20109.4547422098s|fc8ccf6dd53f7633|1746963|qs|local|vector|||0.04||
 plot_preds_tul|stem|de3c7d4dfa6673a6|a673c7017756b963|8189188aa95d33f4|394206746||t20109.454745814s|ab5604eaf64fdc44|1743200|qs|local|vector|||0.03||
 plot_preds_tul_hu|stem|6ae3b5b6fb67e888|ffdb9ac898d4da34|0959a2326463631c|-318402520||t20109.4547555524s|3ad2f75524a0de2e|1833880|qs|local|vector|||0.03||
@@ -66,7 +69,9 @@ posterior_epred_hurdle_student_t|function|204d96bf3da525a8|||||||||||||||
 posterior_predict_hurdle_student_t|function|174ae340733e04d5|||||||||||||||
 pred_draws_discomfort|stem|44a090307c0df751|4a8fed4a98fded10|512938aeb4cd5ce2|-773445846||t20108.3768133017s|a464db9ce18c86c7|103952|qs|local|vector|||3.45||
 pred_draws_discomfort_hu|stem||39de37ca56e78ae1|d3614b56cc9d11cf|1071102353||t20107.4452180664s||0|qs|local|vector|||0.03||could not find function get_pred_draws_discomfort_hu
+pred_draws_discomfort_phi|stem|def55b0f9e569427|7f1761cf46bc06bb|864e6a9dc5b954f2|1662911589||t20109.7122856675s|926700faa56024c2|8179|qs|local|vector|||2.75||
 pred_draws_rpe|stem|058e4bcb04a85f5e|68964633b535903b|1e611b28ba207116|-344379088||t20108.3787279768s|85e4279e82247dcb|202471|qs|local|vector|||2.9||
+pred_draws_rpe_phi|stem|50ce94a1fa8290ec|5ecc7786baa8214e|977ba67c909501a5|-90217756||t20109.7139903191s|74db41047a825d8a|37254837|qs|local|vector|||15||
 pred_draws_tul|stem|ce70fc4ebaacb095|b0fa0cd7299090b8|47378193d05363c5|-56985693||t20108.7273196925s|9067e0734bc8644e|202185|qs|local|vector|||20.09||
 pred_draws_tul_hu|stem|8bc0777c4e833ee7|c0a9b01c6e41bc1a|5b6d351c578cc4c9|1792114504||t20108.7283266642s|dcac792827f27aa7|217652|qs|local|vector|||15.08||
 prior_data|stem|d74be036fba95fe5|ba1ed3bf26acf36f|7b4fd9a41d1aceb3|-994734073||t20104.6597294163s|e23e881aa9b90b7e|75768|qs|local|vector|||0.66||

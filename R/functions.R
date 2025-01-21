@@ -536,6 +536,24 @@ get_contrast_draws_rpe <- function(model, prior_model) {
   )
 }
 
+get_pred_draws_rpe_phi <- function(model, prior_model) {
+  pred_draws <- bind_rows(
+    predictions(prior_model) |>
+      get_draws() |>
+      mutate(distribution = "prior"),
+    predictions(model) |>
+      get_draws() |>
+      mutate(distribution = "posterior")
+  ) |>
+    mutate(core_assisted = factor(
+      case_when(
+        core_assisted == "core" ~ "Core",
+        core_assisted == "assisted" ~ "Assisted"
+      ),
+      levels = c("Core", "Assisted")
+    ))
+}
+
 # Rating of perceived discomfort outcome
 
 get_pred_draws_discomfort <- function(model) {
@@ -558,6 +576,17 @@ get_contrast_draws_discomfort <- function(model) {
                     variables = "core_assisted",
                     re_formula = NA) |>
       get_draws()
+}
+
+get_pred_draws_discomfort_phi <- function(model) {
+  pred_draws <- predictions(model) |>
+    mutate(core_assisted = factor(
+      case_when(
+        core_assisted == "core" ~ "Core",
+        core_assisted == "assisted" ~ "Assisted"
+      ),
+      levels = c("Core", "Assisted")
+    ))
 }
 
 # Plot results -----

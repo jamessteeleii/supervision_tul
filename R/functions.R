@@ -767,7 +767,7 @@ make_plot_preds_tul <- function(pred_draws) {
         fill = distribution
       ),
       data = filter(pred_draws, core_assisted == "Core"),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -781,7 +781,7 @@ make_plot_preds_tul <- function(pred_draws) {
         fill = distribution
       ),
       data = filter(pred_draws, core_assisted == "Assisted"),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -814,7 +814,7 @@ make_plot_contrasts_tul <- function(contrast_draws) {
         color = distribution,
         fill = distribution
       ),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -851,7 +851,7 @@ make_plot_preds_tul_hu <- function(pred_draws) {
         fill = distribution
       ),
       data = filter(pred_draws, core_assisted == "Core"),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -865,7 +865,7 @@ make_plot_preds_tul_hu <- function(pred_draws) {
         fill = distribution
       ),
       data = filter(pred_draws, core_assisted == "Assisted"),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -898,7 +898,7 @@ make_plot_contrasts_tul_hu <- function(contrast_draws) {
         color = distribution,
         fill = distribution
       ),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -956,7 +956,7 @@ make_plot_preds_rpe <- function(pred_draws) {
         fill = distribution
       ),
       data = filter(pred_draws, core_assisted == "Core"),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -970,7 +970,7 @@ make_plot_preds_rpe <- function(pred_draws) {
         fill = distribution
       ),
       data = filter(pred_draws, core_assisted == "Assisted"),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -1003,7 +1003,7 @@ make_plot_contrasts_rpe <- function(contrast_draws) {
         color = distribution,
         fill = distribution
       ),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -1038,7 +1038,7 @@ make_plot_preds_discomfort <- function(pred_draws) {
         x = draw * 10
         ),
       data = filter(pred_draws, core_assisted == "Core"),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -1050,7 +1050,7 @@ make_plot_preds_discomfort <- function(pred_draws) {
         x = draw * 10
         ),
       data = filter(pred_draws, core_assisted == "Assisted"),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),
@@ -1077,7 +1077,7 @@ make_plot_contrasts_discomfort <- function(contrast_draws) {
       aes(
         x = draw * 10
       ),
-      point_interval = "mean_qi",
+      point_interval = "median_qi",
       .width = .95,
       slab_alpha = 0.5,
       position = position_dodge(w = -0.1),

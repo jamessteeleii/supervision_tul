@@ -1,0 +1,182 @@
+---
+title: "Diagnostic Plots"
+subtitle: "The effects of supervision upon effort during resistance training: A Bayesian analysis of prior data and an experimental study of private strength clinic members"
+author: "James Steele, James Fisher, Tim Dettmann"
+format:
+  pdf:
+    documentclass: report
+    toc: false
+    number-sections: false
+    highlight-style: github
+    fig-width: 10
+    fig-height: 10
+---
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+targets::tar_config_set(store = here::here('_targets'))
+
+```
+
+
+# Prior Sample Models
+
+## Time Under Load
+
+### $\hat{R}$
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(rhat_prior_sample_tul)
+
+rhat_prior_sample_tul
+
+```
+
+### Trace plots
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(trace_plot_prior_sample_tul)
+
+trace_plot_prior_sample_tul
+
+```
+
+### Posterior predictive check
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(pp_check_prior_sample_tul)
+
+pp_check_prior_sample_tul
+
+```
+
+## Rating of Perceived Effort
+
+### $\hat{R}$
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(rhat_prior_sample_rpe)
+
+rhat_prior_sample_rpe
+
+```
+
+### Trace plots
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(trace_plot_prior_sample_rpe)
+
+trace_plot_prior_sample_rpe
+
+```
+
+### Posterior predictive check
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(pp_check_prior_sample_rpe)
+
+pp_check_prior_sample_rpe
+
+```
+
+# Experimental Study Models
+
+## Time Under Load
+
+### $\hat{R}$
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(rhat_tul)
+
+rhat_tul
+
+```
+
+### Trace plots
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(trace_plot_tul)
+
+trace_plot_tul
+
+```
+
+### Posterior predictive check
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(pp_check_tul)
+
+pp_check_tul
+
+```
+
+## Rating of Perceived Effort
+
+### $\hat{R}$
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(rhat_rpe)
+
+rhat_rpe
+
+```
+
+### Trace plots
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(trace_plot_rpe)
+
+trace_plot_rpe
+
+```
+
+### Posterior predictive check
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(pp_check_rpe)
+
+pp_check_rpe
+
+```
+
+## Rating of Perceived Discomfort
+
+### $\hat{R}$
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(rhat_discomfort)
+
+rhat_discomfort
+
+```
+
+### Trace plots
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(trace_plot_discomfort)
+
+trace_plot_discomfort
+
+```
+
+### Posterior predictive check
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+targets::tar_load(pp_check_discomfort)
+
+pp_check_discomfort
+
+```

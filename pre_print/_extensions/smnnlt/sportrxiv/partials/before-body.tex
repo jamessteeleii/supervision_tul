@@ -27,28 +27,24 @@ $for(by-author)$\stepcounter{nauthor}$endfor$
 \begin{spacing}{2.5}
 \thispagestyle{firstpage}
 \vspace*{0.1cm}
-{\huge{\textbf{$articletitle$}}}
+{\Large{\textbf{$articletitle$}}}
 \end{spacing}
 \vspace*{0.1cm}
-$by-author:_authors.tex()[, ]$
-\\
-\bigskip
-$by-affiliation:_affiliations.tex()[\\ ]$
-\\
-\bigskip
-*Correspondence: 
+\small{$by-author:_authors.tex()[, ]$}
+
+\small{$by-affiliation:_affiliations.tex()[\\ ]$}
+
+\small{*Correspondence: 
 $for(by-author)$
 $if(by-author.attributes.corresponding)$
-\href{mailto:$by-author.email$}{\color{black}$by-author.email$}
+\href{mailto:$by-author.email$}{\color{black}$by-author.email$}}
 $endif$
 $endfor$
-\\
-\bigskip
 \begin{spacing}{1}
-Cite as: \shortauthor$if(year)$($year$)$else$(\the\year)$endif$. $articletitle$. \emph{SportRxiv.} \\
+\small{Cite as: \shortauthor$if(year)$($year$)$else$(\the\year)$endif$. $articletitle$. \emph{SportRxiv.}} \\
 \end{spacing}
 $if(suppl-link)$
-  \vspace{1mm} Supplementary Materials: \href{$suppl-link$}{$suppl-link$} \\
+  \vspace{1mm} \small{Supplementary Materials: \href{$suppl-link$}{$suppl-link$}} \\
 $endif$
 \vspace*{1cm}
 \end{flushleft}
@@ -65,13 +61,12 @@ $endif$
   linecolor=gray!30,
   leftmargin=20pt,
   rightmargin=20pt,
-  frametitle={\large{Abstract}},
+  frametitle={\small{Abstract}},
 ]{abstractbox}
 
 \begin{abstractbox}
-  $abstract$ 
+  \footnotesize{$abstract$} 
   $if(keywords)$
-  \\ \\
   Keywords: \emph{${for(keywords)}${keywords}${sep}; ${endfor}}
   $endif$ 
 \end{abstractbox}

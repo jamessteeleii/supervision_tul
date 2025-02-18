@@ -411,6 +411,27 @@ fit_model_discomfort <- function(data) {
   )
 }
 
+# Model checks -----
+make_rhat_plot <- function(model) {
+  mod_rhat <- enframe(brms::rhat(model)) |>
+    filter(!str_detect(name, "^r_id"))
+  
+  rhat_main_params <- mod_rhat$value
+  
+  mcmc_rhat(rhat_main_params) +
+    scale_x_continuous(breaks = c(1, 1.01, 1.02, 1.03, 1.04, 1.05)) +
+    geom_vline(xintercept = 1.01,
+               linetype = "dashed",
+               alpha = 0.25)
+}
+
+make_trace_plot <- function(model) {
+  plot(model)
+}
+
+make_pp_check <- function(model) {
+  pp_check(model)
+}
 # Model post-processing -----
 
 # Time under load outcome
@@ -1142,4 +1163,95 @@ make_plot_combined_rpe_discomfort <- function(plot1, plot2, plot3, plot4) {
   
   wrap_elements(rpe_plots) / wrap_elements(discomfort_plots) 
   
+}
+
+# Additional descriptive model of load progression -----
+fit_loadprog_model <- function(data) {
+  
+  lmer(load ~ log1p(week) * core_assisted + (log1p(week) | location) +  (log1p(week) | machine) + (log1p(week) | id),
+                     data = data,
+                     REML = TRUE)
+  
+}
+
+get_preds_loadprog <- function(model) {
+  predictions(
+    model,
+    newdata = datagrid(
+      location = NA,
+      id = NA,
+      machine = NA,
+      week = 1:150,
+      core_assisted = c("core", "assisted")
+    ),
+    re.form = NA
+  )
+}
+
+get_slopes_loadprog <- function(model) {
+  slopes(
+    model,
+    newdata = datagrid(
+      location = NA,
+      id = NA,
+      machine = NA,
+      week = 1:150,
+      core_assisted = c("core", "assisted")
+    ),
+    re.form = NA,
+    variables = "week"
+  )
+}
+
+make_plot_loadprog <- function(preds, slopes) {
+  
+  pred_plot <- preds |>
+    mutate(
+      core_assisted = case_when(
+        core_assisted == "core" ~ "Core",
+        core_assisted == "assisted" ~ "Assisted"
+      )
+    ) |>
+    ggplot(aes(x=week, y=estimate, ymin=conf.low, ymax=conf.high, color=core_assisted, fill=core_assisted)) +
+    geom_ribbon(alpha = 0.25, color=NA) +
+    geom_line() +
+    scale_y_continuous(limits = c(0,150)) +
+    scale_color_manual(values = c("#E69F00", "#56B4E9")) +
+    scale_fill_manual(values = c("#E69F00", "#56B4E9")) +
+    labs(
+      x = "Weeks",
+      y = "Training Load (lbs)",
+      color = "Membership",
+      fill = "Membership"
+    ) +
+    theme_classic()
+  
+  slope_plot <- slopes |>
+    mutate(
+      core_assisted = case_when(
+        core_assisted == "core" ~ "Core",
+        core_assisted == "assisted" ~ "Assisted"
+      )
+    ) |>ggplot(aes(x=week, y=estimate, ymin=conf.low, ymax=conf.high, color=core_assisted, fill=core_assisted)) +
+    geom_ribbon(alpha = 0.25, color = NA) +
+    geom_line() +
+    scale_color_manual(values = c("#E69F00", "#56B4E9")) +
+    scale_fill_manual(values = c("#E69F00", "#56B4E9")) +
+    labs(
+      x = "Weeks",
+      y = "Slope of Training Load (lbs)",
+      color = "Membership",
+      fill = "Membership"
+    ) +
+    facet_wrap("core_assisted") + 
+    theme_classic() +
+    theme(strip.background = element_blank(),
+          strip.text = element_blank())
+  
+  plot_load_prog <-  (pred_plot / slope_plot) + 
+    plot_layout(guides = "collect") +
+    plot_annotation(title = "Load Progression over Time",
+                    subtitle = "Linear Log Model with Maximal Random Effects",
+                    caption = "Load ~ log1p(Week) * Core_Assisted + (log1p(Week) | Location) +  (log1p(Week) | Machine) + (log1p(Week) | ID)") & 
+    theme(legend.position = "bottom")
 }

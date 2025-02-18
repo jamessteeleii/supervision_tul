@@ -17,6 +17,7 @@ tar_option_set(
     "ggdist",
     "tidybayes",
     "marginaleffects",
+    "lme4",
     "rstan",
     "patchwork",
     "here",
@@ -122,7 +123,89 @@ list(
     fit_model_discomfort(data)
   ),
   
-  # Model post procession -----
+  
+  
+  # Model checks -----
+  
+  # rhat plots
+  tar_target(
+    rhat_prior_sample_tul,
+    make_rhat_plot(model_prior_sample_tul)
+  ),
+  
+  tar_target(
+    rhat_prior_sample_rpe,
+    make_rhat_plot(model_prior_sample_rpe)
+  ),
+  
+  tar_target(
+    rhat_tul,
+    make_rhat_plot(model_tul)
+  ),
+  
+  tar_target(
+    rhat_rpe,
+    make_rhat_plot(model_rpe)
+  ),
+  
+  tar_target(
+    rhat_discomfort,
+    make_rhat_plot(model_discomfort)
+  ),
+  
+  # trace plots
+  tar_target(
+    trace_plot_prior_sample_tul,
+    make_trace_plot(model_prior_sample_tul)
+  ),
+  
+  tar_target(
+    trace_plot_prior_sample_rpe,
+    make_trace_plot(model_prior_sample_rpe)
+  ),
+  
+  tar_target(
+    trace_plot_tul,
+    make_trace_plot(model_tul)
+  ),
+  
+  tar_target(
+    trace_plot_rpe,
+    make_trace_plot(model_rpe)
+  ),
+  
+  tar_target(
+    trace_plot_discomfort,
+    make_trace_plot(model_discomfort)
+  ),
+  
+  # pp check
+  tar_target(
+    pp_check_prior_sample_tul,
+    make_pp_check(model_prior_sample_tul)
+  ),
+  
+  tar_target(
+    pp_check_prior_sample_rpe,
+    make_pp_check(model_prior_sample_rpe)
+  ),
+  
+  tar_target(
+    pp_check_tul,
+    make_pp_check(model_tul)
+  ),
+  
+  tar_target(
+    pp_check_rpe,
+    make_pp_check(model_rpe)
+  ),
+  
+  tar_target(
+    pp_check_discomfort,
+    make_pp_check(model_discomfort)
+  ),
+  
+  # Model post processing -----
   tar_target(
     pred_draws_tul,
     get_pred_draws_tul(model_tul, model_prior_sample_tul)
@@ -286,6 +369,51 @@ list(
       dpi = 300,
       w = 7.5,
       h = 7
+    )
+  ),
+  
+  # Additional descriptive model of load progression -----
+  
+  tar_target(
+    prior_loadprog_data_file,
+    here("data", "prior_sample_loadprog_data.csv"),
+    format = "file"
+  ),
+  tar_target(
+    prior_loadprog_data, 
+    read_csv(prior_loadprog_data_file) |>
+      janitor::clean_names()
+  ),
+  
+  tar_target(
+    model_loadprog,
+    fit_loadprog_model(prior_loadprog_data)
+  ),
+  
+  tar_target(
+    preds_loadprog,
+    get_preds_loadprog(model_loadprog)
+  ),
+  
+  tar_target(
+    slopes_loadprog,
+    get_slopes_loadprog(model_loadprog)
+  ),
+  
+  tar_target(
+    plot_loadprog,
+    make_plot_loadprog(preds_loadprog, slopes_loadprog)
+  ),
+  
+  tar_target(
+    plot_loadprog_tiff,
+    ggsave(
+      "plots/plot_loadprog.tiff", 
+      plot_loadprog, 
+      device = "tiff",
+      dpi = 300,
+      w = 7.5,
+      h = 5
     )
   )
 )

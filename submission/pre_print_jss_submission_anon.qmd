@@ -1,50 +1,11 @@
 ---
-articletitle: |
-  The effects of supervision upon effort during resistance training: A Bayesian analysis of prior data and an experimental study of private strength clinic members
-# shorttitle: "Doe et al. (2022)" # usually auto-generated
-format: 
-  sportrxiv-pdf:
-    include-in-header:
-      text: |
-       \usepackage[font=scriptsize]{caption}
-       \usepackage{caption}
-author:
-  - name: James Steele
-    affiliations:
-      - ref: 1
-      - ref: 2
-      - ref: 3
-    orcid: 0000-0002-8003-0757
-    corresponding: true
-    email: james@steele-research.com
-  - name: James Fisher
-    affiliations:
-      - ref: 3
-      - ref: 4
-    orcid: 0000-0002-6013-8402
-    email: james.fisher.phd@outlook.com
-  - name: Tim Dettmann
-    affiliations:
-      - ref: 1
-    email: tim.dettmann@gmail.com
-affiliations:
-      - id: 1
-        name: Kieser Australia, Melbourne, Australia
-      - id: 2
-        name: Steele Research Limited, Eastleigh, UK
-      - id: 3
-        name: Department of Sport and Health, Solent University, Southampton, UK
-      - id: 4
-        name: The Exercise Coach, Tennessee, USA
+title: "The effects of supervision upon effort during resistance training: A Bayesian analysis of prior data and an experimental study of private strength clinic members"
 abstract: |
-  Supervision during resistance training (RT) may enhance strength gains by optimizing trainee effort. We investigated supervision’s role in effort during RT in a unique setting with private strength clinics, where members train either unsupervised (“Core” membership) or supervised by a qualified exercise scientist (“Assisted” membership). Using both retrospective analysis of member training records and a prospective experimental study, we examined supervision’s impact on exercise performance, measured as time under load (TUL), rating of perceived effort (RPE), and rating of perceived discomfort (RPD). Bayesian methods were applied, using empirically informed prior distributions from retrospective data to model the experimental study. The prior sample included ~1000 members training sessions from each membership type, while the experimental study involved 45 Core members performing both supervised and unsupervised sessions in randomized order, using their current training loads to momentary failure. Our findings suggest that, in real-world settings (in situ), exercise performance differed little between supervised and unsupervised training. However, in our experimental study, supervision improved TUL (Core = 125.12 [95%QI: 113.70, 131.90] sec; Assisted = 147.35 [95%QI: 134.29, 154.81] sec; contrast = -22.10 [95%QI: -26.60, -17.61] sec). In percentage points RPE was slightly higher with supervision in both prior real-world (Core = 53% [95%QI: 51%, 55%]; Assisted = 59% [95%QI: 57%, 61%]; contrast = -6% [95%QI: -8%, -4%]) and experimental settings (Core = 81% [95%QI: 75%, 86%]; Assisted = 87% [95%QI: 83%, 91%]; contrast = -6% [95%QI: -10%, -4%]), suggesting trainees push closer to failure under supervision. This was further supported by higher RPD during the experimental study (Core = 6.3 [95%QI: 5.1, 7.3]; Assisted = 7.5 [95%QI: 6.5, 8.3]; contrast = -1.2 [95%QI: -1.6, -0.9]). Overall, these results reinforce prior research on the benefits of supervision in RT, indicating that unsupervised trainees—especially in real-world conditions—likely train with suboptimal effort.
-license-type: ccby # change if neccessary
-# year: 2025 # defaults to current year
-keywords: [supervision, effort, resistance training, bayesian] # optional
-# optional link to Supplementary Material:
-suppl-link: https://osf.io/etb34/
-reference-section-title: References
-printnote: "PREPRINT - NOT PEER REVIEWED" # if post print, include "POSTPRINT" then link to the published article
+  Supervision during resistance training (RT) may optimise trainee effort. We examined this in private strength clinics, where members train either unsupervised (“Core”) or supervised by an exercise scientist (“Assisted”). Using retrospective analysis of real-world data from ~1000 members training sessions per group, and an experimental study with 45 Core members, we assessed supervision’s impact on time under load (TUL), and rating of perceived effort (RPE) and discomfort (RPD). Bayesian methods were used to integrate retrospective data priors and update to posteriors using data from the experimental study. Real-world retrospective data showed minimal performance differences, but the experimental study posterior estimates found supervision improved TUL (Core = 125.12 [95%QI: 113.70, 131.90] sec; Assisted = 147.35 [95%QI: 134.29, 154.81] sec; contrast = -22.10 [95%QI: -26.60, -17.61] sec). Supervision also slightly increased RPE in real-world (Core = 53% [95%QI: 51%, 55%]; Assisted = 59% [95%QI: 57%, 61%]; contrast = -6% [95%QI: -8%, -4%]) and experimental settings (Core = 81% [95%QI: 75%, 86%]; Assisted = 87% [95%QI: 83%, 91%]; contrast = -6% [95%QI: -10%, -4%])), indicating trainees pushed closer to failure. RPD was also higher with supervision. These findings reinforce prior research on supervision’s benefits, suggesting unsupervised trainees—especially in real-world conditions—train with suboptimal effort.
+format: 
+  pdf:
+    include-in-header: 
+      text: '\usepackage{lineno}\linenumbers'
 bibliography: bibliography.bib  
 pdf-engine: xelatex
 execute: 
@@ -107,7 +68,7 @@ The study was conducted at a selection of strength clinics operated by Kieser Au
 
 In addition to the experimental study design noted above, we also took samples of Core and Assisted trainees from historical data records in Kieser Australia's database. We took separate random samples to obtain both TUL and session RPE data as not all members record their RPE. There were two reasons for examining these historical samples. Firstly, we used this data to generate empirical informative prior distributions to use in our Bayesian modelling of the experimental study data. Secondly, they allowed us to also explore the descriptive[^2] difference between Core and Assisted training *in situ*, but also that we could compare the prior distribution for the random samples of members *in situ* with the posterior distribution of members completing their sessions in the experimental study to understand the extent to which study effects might also influence outcomes.
 
-The experimental study component of this project was approved by the Southampton Solent University Health Exercise and Sport Science Ethics committee (id: STEELEAUG2016). All participants provided informed consent to participate in the study. Data in the prior sample was used in de-identified form and with member consent for data to be used for research purposes. 
+The experimental study component of this project was approved by the a university ethics committee. All participants provided informed consent to participate in the study. Data in the prior sample was used in de-identified form and with member consent for data to be used for research purposes. 
 
 [^2]: Note that we do not claim this difference to be an estimated causal effect in this data given that we have not adjusted for confounders; for example, that different types of people might self-select into either Core or Assisted memberships and that this might confound comparisons of either TUL or session RPE.
 
@@ -130,7 +91,7 @@ All RT was performed using resistance machines (Kieser Training AG, Zurich, Swit
 The data generated from the sample of historical members was generated according to the standard protocol described above that all Kieser Australia members are prescribed. TUL was also recorded similarly using timers available about the clinic, or for some sessions using a more recently developed mobile phone application (Kieser Konnect, Kieser Australia) which is placed on a stand on the resistance machines and used to track TUL for each exercise in their training card which is programmed to the application. Session RPE was recorded using either the mobile application for Core members, or via the application used by staff during Assisted sessions and used a modified version of the Borg 6-20 scale where the scale is displayed as scrollable and the verbal anchors are "6 - None", "7- Very, very light", "13 – Somewhat hard", "19 - Very, very hard", and "20 – Maximal Exertion".
 
 ## Statistical Analysis
-All code utilised for data preparation and analyses are available in either the Open Science Framework page for this project <https://osf.io/etb34/> or the corresponding GitHub repository <https://github.com/jamessteeleii/supervision_tul>. We cite all software and packages used in the analysis pipeline using the `grateful` package [@rodriguez-sanchezGratefulFacilitateCitation2023] which can be seen here: <https://osf.io/ew79g>.
+All code utilised for data preparation and analyses are available in either the Open Science Framework page for this project <https://osf.io/etb34/>. We cite all software and packages used in the analysis pipeline using the `grateful` package [@rodriguez-sanchezGratefulFacilitateCitation2023] which can be seen here: <https://osf.io/ew79g>.
 
 As noted, the project was not pre-registered but involved exploratory analysis of the experimental and prior datasets. All analyses have been conducted within a Bayesian framework and all posterior estimates and their precision, along with conclusions based upon them, are interpreted continuously and probabilistically, considering priors, data quality, and all within the context of each outcome and the assumptions of the model employed as the estimator [@kruschkeBayesianNewStatistics2018]. All models were run with 2000 warmup and 2000 sampling iterations and four Monte Carlo Markov Chains. Trace plots were produced along with $\hat{R}$ values to examine whether chains had converged, and posterior predictive checks for each model were also examined to understand the model implied distributions (see <https://osf.io/u7g8c>. We fit two sets of models for the TUL and RPE outcomes, one on the prior sample of data using weakly regularising priors in order to generate posterior distributions to inform the priors used in the other model using the experimental data, and a single model on the experimental data for the RPD outcome using weakly regularising priors. These models are described below. For all models we calculated average marginal effects as the global grand means for both predictions under each condition as well as contrasts between conditions and visualise both prior and posterior distributions along with median and 95% quantile interval (QI) estimates from these. 
 
@@ -475,14 +436,12 @@ To our knowledge this study is the first examine the role of supervision during 
 
 No direct funding was received for this study. Operational costs for its delivery were absorbed by Kieser Australia and so provided *in-kind* value.
 
-# Contributions
-
-All authors conceived the idea for the project and designed the methods. TD coordinated and oversaw the data collection. JS conducted the statistical analyses and produced data visualisations. JS and JF drafted the initial manuscript. All authors contributed to editing the manuscript. All authors read and approved the final manuscript.
-
 # Acknowledgements
 
 We would like to extend our sincere gratitude to all the members and exercise scientists at Kieser Australia without whom this project would not have been possible. We would also like to extend our thanks to Myles Moore for his feedback on the manuscript.
 
 # Data and Supplementary Material Accessibility
 
-All data and code utilised for data preparation and analyses are available in either the Open Science Framework page for this project https://osf.io/etb34/ or the corresponding GitHub repository https://github.com/jamessteeleii/supervision_tul. Other supplementary analyses and plots are also available there.
+All data and code utilised for data preparation and analyses are available in either the Open Science Framework page for this project https://osf.io/etb34/. Other supplementary analyses and plots are also available there.
+
+# References

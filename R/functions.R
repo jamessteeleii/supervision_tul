@@ -786,14 +786,16 @@ make_plot_combined_data <- function(plot1, plot2, plot3, plot4, plot5) {
     (plot1) + theme(strip.text = element_blank()) | (plot2)
   ) +
     plot_annotation(title = "Prior Sample Data Distributions",
-                    subtitle = "Time Under Load and Session Rating of Perceived Effort") +
+                    subtitle = "Time Under Load and Session Rating of Perceived Effort",
+                    tag_levels = "1", tag_prefix = "A") +
     plot_layout(axes = "collect")
   
   data_plots <- (
     (plot3) | (plot4) | (plot5)
   ) +
     plot_annotation(title = "Current Experimental Data Distributions",
-                    subtitle = "Time Under Load, Rating of Perceived Effort, and Rating of Perceived Discomfort") +
+                    subtitle = "Time Under Load, Rating of Perceived Effort, and Rating of Perceived Discomfort",
+                    tag_levels = "1", tag_prefix = "B") +
     plot_layout(axes = "collect_x")
   
   
@@ -976,13 +978,15 @@ make_plot_combined_tul <- function(plot1, plot2, plot3, plot4) {
     (plot1 + guides(fill = "none", color = "none")) | (plot2 + guides(fill = "none", color = "none"))
   ) +
     plot_annotation(title = "Time Under Load",
-                    subtitle = "Global Grand Means for Predictions and Contrasts")
+                    subtitle = "Global Grand Means for Predictions and Contrasts",
+                    tag_levels = "1", tag_prefix = "A")
   
   tul_hu_plots <- (
     (plot3 + guides(fill = "none", color = "none")) | (plot4)
   ) +
     plot_annotation(title = "Stopping at 120 seconds?",
-                    subtitle = "Global Grand Means for Predictions and Contrasts") + 
+                    subtitle = "Global Grand Means for Predictions and Contrasts",
+                    tag_levels = "1", tag_prefix = "B") + 
     plot_layout(guides = "collect") & 
     theme(legend.position = "bottom")
   
@@ -1150,7 +1154,8 @@ make_plot_combined_rpe_discomfort <- function(plot1, plot2, plot3, plot4) {
     (plot1 + guides(fill = "none", color = "none")) | (plot2)
   ) +
     plot_annotation(title = "Rating of Perceived Effort",
-                    subtitle = "Global Grand Means for Predictions and Contrasts") + 
+                    subtitle = "Global Grand Means for Predictions and Contrasts",
+                    tag_levels = "1", tag_prefix = "A") + 
     plot_layout(guides = "collect") & 
     theme(legend.position = "bottom")
   
@@ -1158,7 +1163,8 @@ make_plot_combined_rpe_discomfort <- function(plot1, plot2, plot3, plot4) {
     (plot3) | (plot4)
   ) +
     plot_annotation(title = "Rating of Perceived Discomfort",
-                    subtitle = "Global Grand Means for Predictions and Contrasts")
+                    subtitle = "Global Grand Means for Predictions and Contrasts",
+                    tag_levels = "1", tag_prefix = "B")
   
   
   wrap_elements(rpe_plots) / wrap_elements(discomfort_plots) 
@@ -1254,4 +1260,58 @@ make_plot_loadprog <- function(preds, slopes) {
                     subtitle = "Linear Log Model with Maximal Random Effects",
                     caption = "Load ~ log1p(Week) * Core_Assisted + (log1p(Week) | Location) +  (log1p(Week) | Machine) + (log1p(Week) | ID)") & 
     theme(legend.position = "bottom")
+}
+
+# Flow chart for modelling strategy
+make_flow_chart <- function() {
+  # Data for nodes
+  nodes <- data.frame(
+    id = 1:8,
+    label = c(
+      "Previous observational data\n(i.e., TUL, session RPE)",
+      "Experimental study data\n(i.e., TUL, RPE, RPD)",
+      "Weakly informative priors",
+      "Fit prior models\n(Hurdle Student-t or\nOrdered Beta Regression)",
+      "Estimate posterior effects from\nprevious observational data models",
+      "Use posteriors from previous observational data models\nas priors for experimental data models",
+      "Fit experimental models\n(Hurdle Student-t or\nOrdered Beta Regression)",
+      "Estimate posterior effects from\nexperimental data models"
+    ),
+    x = c(0, 6, 3, 0, 0, 3, 6, 3),
+    y = c(6, 6, 5, 4, 2, 3, 2, 1),
+    model = c("Data", "Data", "Weak Prior", "Prior Model", "Prior Model", "Prior Model", "Posterior Model", "Posterior Model")
+  ) |>
+    mutate(
+      model = factor(model, levels = c("Data", "Weak Prior", "Prior Model", "Posterior Model"))
+    )
+  
+  # Edges (arrows)
+  edges <- data.frame(
+    x = c(0, 6, 3, 0, 0, 3, 6),
+    y = c(6, 6, 5, 4, 4, 3, 2),
+    xend = c(0, 6, 0, 3, 0, 6, 3),
+    yend = c(4, 2, 4, 3, 2, 2, 1)
+  )
+  
+  # Plot
+  ggplot() +
+    ggarchery::geom_arrowsegment(data = edges,
+                                 aes(x = x, xend = xend, y = y, yend = yend), 
+                                 arrow_positions = 0.5, arrows = arrow(length = unit(0.5, "cm"), type = "closed")) + 
+    geom_label(data = nodes, aes(x = x, y = y, label=label,
+                                 fill = model)) + 
+    scale_x_continuous(limits = c(-2,8)) +
+    scale_fill_manual(values = c("grey", "white", "#56B4E9", "#E69F00")) +
+    theme_void() +
+    guides(
+      fill = guide_legend(
+        override.aes = aes(label = "")
+      )
+    ) +
+    labs(
+      title = "Modelling Strategy: Previous Observational and Experimental Data and Models",
+      fill = ""
+    ) +
+    theme(legend.position = "bottom",
+          plot.title = element_text(hjust = 0.5, vjust = 0.5))
 }

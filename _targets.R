@@ -415,5 +415,24 @@ list(
       w = 7.5,
       h = 5
     )
+  ),
+  
+  # Add flow chart for modelling strategy -----
+  tar_target(
+    flow_chart,
+    make_flow_chart()
+  ),
+  
+  tar_target(
+    flow_chart_tiff,
+    ggsave(
+      "plots/flow_chart.tiff", 
+      flow_chart, 
+      device = "tiff",
+      dpi = 300,
+      w = 10,
+      h = 7.5
+    )
   )
+  
 )

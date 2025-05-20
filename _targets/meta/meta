@@ -11,6 +11,8 @@ fit_model_prior_sample_rpe|function|073d92706379d275|||||||||||||||
 fit_model_prior_sample_tul|function|731ffc75b29613c0|||||||||||||||
 fit_model_rpe|function|ece8b3531ced88b0|||||||||||||||
 fit_model_tul|function|5420eb1abbad4fb2|||||||||||||||
+flow_chart|stem|8fec6be5a5b715ff|aaec626ee56aee9e|84b0e824213f8c74|-1623952172||t20228.566488175s|51ecb4bdf3b61366|258777|qs|local|vector|||3.46||
+flow_chart_tiff|stem|0a6a6bf54b64df87|03140b982162bb79|62efc83370aa3d3a|-635963118||t20228.5664944875s|1331fc06a40e10df|97|qs|local|vector|||0.28||
 get_contrast_draws_discomfort|function|c193ee2baf1aec1a|||||||||||||||
 get_contrast_draws_rpe|function|53e6887a1eb8dd27|||||||||||||||
 get_contrast_draws_tul|function|e7eb7ac0560037dc|||||||||||||||
@@ -25,9 +27,10 @@ get_preds_loadprog|function|110e712a639589d8|||||||||||||||
 get_slopes_loadprog|function|063bba6b1565ad64|||||||||||||||
 hurdle_student_t|stem|88febcc959676bee|99d53633fe833ba1|fec10c0fbfdf7d8b|2063339794||t20104.659446836s|b252084a240eec72|455|qs|local|vector|||0||
 hurdle_student_t_setup|function|2b0fdcba93765193|||||||||||||||
-make_plot_combined_data|function|f9b2fd9e8d33e0d5|||||||||||||||
-make_plot_combined_rpe_discomfort|function|21658eafedc6411d|||||||||||||||
-make_plot_combined_tul|function|43e622ac71bacc5a|||||||||||||||
+make_flow_chart|function|a68e6fba831040e5|||||||||||||||
+make_plot_combined_data|function|7b00e8aea8976119|||||||||||||||
+make_plot_combined_rpe_discomfort|function|76633c90daa1d4ce|||||||||||||||
+make_plot_combined_tul|function|980b04671764a6db|||||||||||||||
 make_plot_contrasts_discomfort|function|dc8c45e2f52736d1|||||||||||||||
 make_plot_contrasts_rpe|function|72cc375a12ba9fb0|||||||||||||||
 make_plot_contrasts_tul|function|a0f63da6ef4ead97|||||||||||||||
@@ -54,12 +57,12 @@ model_prior_sample_tul_assisted|stem|0a262a7b0c0029c3|505732ac6555f3a9|dafc816f5
 model_prior_sample_tul_core|stem|c7c5fa680626e3ec|dfab2191844391c2|dafc816f50c5398a|1786397538||t20104.6768996977s|075f096ea1c60a19|204011419|qs|local|vector|||887.34||
 model_rpe|stem|a7f574423849ab81|83dd51485b8de557|95acbf713f35b569|-501003324||t20106.4998163391s|a4c639731cbfa1dc|89375393|qs|local|vector|||232.74||
 model_tul|stem|6dd8de337abd416e|aa218c0222d16c2d|d66567611e876680|-1938942288||t20108.7270745826s|58dfb8fde93f809b|45336663|qs|local|vector|||114.29||
-plot_combined_data|stem|a31b01975f2179e0|e94b5dbbed281056|80a6a7c814c856d9|671039339||t20108.6391013419s|f64c6247d59fb1bd|1570530|qs|local|vector|||0.01||
-plot_combined_data_tiff|stem|f687273e27896985|ff0fa2d420063240|286fa22f334c2b86|1646967051||t20108.6416626388s|8781e7d3a4a21eb4|105|qs|local|vector|||1.07||
-plot_combined_rpe_discomfort|stem|c072da407c694b85|d93694ddbc872064|29da8c14624c65ce|-407254408||t20109.7139984457s|78c566af908ad362|4059955|qs|local|vector|||0.02||
-plot_combined_rpe_discomfort_tiff|stem|9210a455d0eade83|5f19a9189b94f5cb|eb026d9e9aab036b|-1463255941||t20109.7140175083s|2159cf38e38ad193|115|qs|local|vector|||1.25|Removed 2 rows containing missing values or values outside the scale rangegeom_vline.. Removed 2 rows containing missing values or values outside the scale rangegeom_vline.|
-plot_combined_tul|stem|dec89a8814ccf672|4e40e0c5fa6b96b0|b28bab79ddb5c729|-1312985950||t20109.4547674775s|29d7d390b049a31f|5551221|qs|local|vector|||0.01||
-plot_combined_tul_tiff|stem|c49485de2d936009|a82999e8f2fb55c8|b62bf1a6353f3e6f|1342543929||t20109.4548099595s|da7f33a0f827466a|104|qs|local|vector|||1.36|Removed 17 rows containing missing values or values outside the scale rangestat_slabinterval.. Removed 2 rows containing missing values or values outside the scale rangegeom_vline.|
+plot_combined_data|stem|73bab868bd2d3793|e94b5dbbed281056|628f3e434ad79d51|671039339||t20228.5641479635s|1eb91a407a241046|1569690|qs|local|vector|||0.02||
+plot_combined_data_tiff|stem|f687273e27896985|ff0fa2d420063240|a94adbf3605f234e|1646967051||t20228.5641623332s|8781e7d3a4a21eb4|105|qs|local|vector|||0.94||
+plot_combined_rpe_discomfort|stem|b7b6b1891d46602c|d93694ddbc872064|f925de399f5a1100|-407254408||t20228.564176234s|5f053f7f7ebaaea9|4060032|qs|local|vector|||0||
+plot_combined_rpe_discomfort_tiff|stem|9210a455d0eade83|5f19a9189b94f5cb|efbb5ec8a531377f|-1463255941||t20228.5642159399s|2159cf38e38ad193|115|qs|local|vector|||1.16|Removed 2 rows containing missing values or values outside the scale rangegeom_vline.. Removed 2 rows containing missing values or values outside the scale rangegeom_vline.|
+plot_combined_tul|stem|cf507413af9ca515|4e40e0c5fa6b96b0|dc951df79d949676|-1312985950||t20228.5641699359s|fb2d868f6e22e734|5551594|qs|local|vector|||0.03||
+plot_combined_tul_tiff|stem|c49485de2d936009|a82999e8f2fb55c8|0f3662ffc7a89904|1342543929||t20228.5641985094s|da7f33a0f827466a|104|qs|local|vector|||1.53|Removed 17 rows containing missing values or values outside the scale rangestat_slabinterval.. Removed 2 rows containing missing values or values outside the scale rangegeom_vline.|
 plot_contrasts_discomfort|stem|89482a328d1ad802|bd8f5d81b01260bc|0ef0dd06162ddea8|1270957714||t20109.4547349868s|60d17dd99998e267|531131|qs|local|vector|||0.01||
 plot_contrasts_rpe|stem|a7f8be45192d3718|e405506efdf3a349|993811a469fc592a|757678525||t20109.4547385781s|21c55d1f3c154e2f|760432|qs|local|vector|||0.03||
 plot_contrasts_tul|stem|193f240b2446324e|b7b46afba5a852ac|99f709cb7f120d21|-1317939829||t20109.4547521122s|d05156814593ea66|782678|qs|local|vector|||0.01||

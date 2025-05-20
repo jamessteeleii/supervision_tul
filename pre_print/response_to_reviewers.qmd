@@ -1,0 +1,334 @@
+---
+title: "Response to Reviewers"
+subtitle: "The effects of supervision upon effort during resistance training: A Bayesian analysis of prior data and an experimental study of private strength clinic members"
+format: pdf
+bibliography: bibliography.bib  
+---
+
+Dear Professor Gruet,
+
+Many thanks for considering our manuscript and placing it under review with *Peer Community in Health and Movement Sciences*. We are very grateful for your efforts in obtaining reviews. We are very impressed with the quality and constructiveness of the feedback provided by the reviewers which we feel has significantly improved the quality of our manuscript.
+
+Note, because of the extensive rewrite of the manuscript due to the shift in focus we have not used track changes or highlighting throughout, though changes can be viewed in the GitHub repository commits and versions. However, please see below for our comments in response to some of the key points raised by the reviewers.
+
+Again, we would like to thank all involved in the process of reviewing this manuscript and look forward to the next round of reviews in considering our revisions.
+
+Many thanks
+
+The authors
+
+# Recommender and Reviewer Comments and Author Responses
+
+## Recommender - Mathieu Gruet
+
+### Recommender Comment
+
+<!-- The reviewers have, however, identified several concerns that require your attention before the manuscript can proceed further. Most notably, the analysis methodology and presentation of results would benefit being slightly more accessible. As your research has considerable practical implications for resistance training coaches and strength clinic members, and considering that many of whom may lack the technical expertise to fully comprehend your analytical approach, greater clarity is essential. The actual technical complexity may also present challenges for researchers who wish to replicate or build upon your methods in similar or different contexts. -->
+
+
+## Reviewer 1 - David Clarke
+
+### Reviewer Comment
+
+Minor comments on the writing: 
+
+While the paper is overall well written, I found that the paragraphs tended to be excessively lengthy. There were also a few awkward and run-on sentences and a few instances of colloquial writing that I recommend be cleaned up, as follows:
+
+Page 3: start a new paragraph at “An acute randomized cross-over design…”
+
+Page 4 and elsewhere: “We ended up with n = 45…” – “ended up” seems colloquial to me.
+
+Page 6: The following sentence is awkward and excessively long: “Anecdotal reports from Kieser Australia staff had also prior to exploring the data suggested to us that, despite the prescription to train to momentary failure, many Core members were instead selecting loads and training only to the upper 120 second TUL range threshold irrespective of proximity to failure.”
+
+### Author Response
+
+Thank you for your kinds words and for the suggestions. We have made the minor changes noted on page 3, page 4 and elsewhere (noting instead the "final sample size..."), and change the sentence on page 6 to *"Prior to exploring the data we had received anecdotal reports from Kieser Australia staff. These suggested to us that, despite the prescription to train to momentary failure, many Core members were instead selecting loads and training only to the upper 120 second TUL range threshold irrespective of proximity to failure."*
+
+### Reviewer Comment
+
+The repetition tempo and resulting TUL are major components of the resistance exercise prescription, yet the emphasis on these variables is poorly justified. Specifically, on page 3, the authors mention that the clients are prescribed repetitions lasting ~ 12 seconds, which consists of a 4:2:4:2 concentric:isometric:eccentric:isometric tempo. This tempo prescription is questionable for strength development, wherein powerful concentric motions of maximal effort should be emphasized (Spiering et al. 2023 J Str Cond Res). Pausing at the top of the movement (in the “lockout” position) is likewise questionable.
+
+What effects can be expected from this tempo prescription on TUL compared to more common resistance exercise prescriptions? Would these effects affect the generalizability of this study?
+
+To what extent do the clients comply with the tempo prescriptions?
+
+What is the reliability and accuracy of the TUL recordings? The authors stated that “During each session for each exercise the trainees/trainers recorded their TUL achieved as they would do for their usual sessions using timers situated around the clinic in view during training specifically for this purpose.” For the retrospective analysis, the authors stated that “TUL was also recorded similarly using timers available about the clinic, or for some sessions using a more recently developed mobile phone application (Kieser Konnect, Kieser Australia) which is placed on a stand on the resistance machines and used to track TUL for each exercise in their training card which is programmed to the application.” The self-report nature of this variable could bias the results.
+
+### Author Response
+
+Unfortunately this is not something that was necessarily chosen and justified from a research design perspective. Instead this is just the protocol that Kieser utilise across their facilities. Firstly However, we would note that, whilst most would argue that faster movement speeds are likely to maximise neuromuscular adaptations that contribute to overall strength development it is also not conclusive that repetition durations of those used here are necessarily suboptimal and a range of movement speeds have been found to be effective [@wilkInfluenceMovementTempo2021]. A recent meta-analysis did conclude that intentionally slow repetitions are sub-optimal [@hermesIntentionallySlowConcentric2023] though the dichotomisation of "fast" vs "slow" does limit the interpretation of their results (we are actually in discussions regarding whether to redo this meta-analysis with updated searches and the treatment of repetition duration as a continuous variables with interactions between concentric and eccentric phase durations). But more broadly speaking, the magnitude of standardised effect sizes reported in a recent large scale study from our group utilising another dataset [@steeleLongTermTimeCourseStrength2023a] from a commercial training provider who use an even longer repetition duration (~10:10s) were similar to those seen in large scale meta-analytic data we have collected regarding more typical resistance training programs compared with non-training controls [@steeleMetaanalysisVariationSport2023a]. Thus, it seems unlikely that there would be drastically different effects upon strength even with slower repetition durations. Lastly, it is also thought that the intended rather than actual speed of movement may be more important [@behmNarrativeReviewVelocitybased2025]. We actually intend to more systematically explore this at some point as we are shifting towards a protocol whereby, despite a deliberately slow initial repetition duration, after fatigue accumulates intraset the actual movement speed possible is reduced such that even slow repetition durations can be maintained whilst attempting to move fast. 
+
+Also, we did not necessarily have any specific theoretically driven hypotheses about the impact of supervision with specific manipulations of resistance training variables such as repetition duration. So we felt that this ecological dataset and context was suitable for our research questions, particularly given it offered a natural experiment of sorts as Kieser already implements supervised and unsupervised training.
+
+Notably however we do not have data on the extent to which clients actually comply with these prescriptions (though informally from clinical observations the majority do comply with them approximately). We have added a comment in the limitations to note this in addition to also the reliability of the TUL recordings. The latter we are less concerned with however given that the sample size of the previous data is large (any measurement error due to self-report, assuming no systematic bias, will only affect the error term and thus precision of estimates), and that this is also the case with the experimental dataset when considering the multiple exercises utilised too.
+
+*"Firstly, though anecdotal observations in the clinic generally confirm compliance broadly speaking, we do not have systematically captured data on whether the repetition durations prescribed (or other aspects of the prescribed training protocol) are complied with by members. Further, the measurement error for the self-recorded or exercise scientist recorded TUL is not known; though the large sample size for the previous data combined with the multiple observations per person in our experimental dataset minimised any non-systematic measurement error as this would merely affect the precision of estimates."* 
+
+### Reviewer Comment
+
+Consider justifying the use of Bayesian inference over alternative frequentist methods. This justification should be upfront, perhaps in the Introduction or in the Approach to the Problem section of the Methods. In this specific case, the Bayesian methods are powerful for studying in an integrated manner the experimental and observational data. The authors should better emphasize this point as well as other benefits that the Bayesian approach uniquely afforded.
+
+### Author Response
+
+We have added the following to the beginning of the statistical methods section:
+
+*"All analyses have been conducted within a Bayesian framework and are primarily focused upon estimation of the relevant parameters of interest from our models [@kruschkeBayesianNewStatistics2018]. A Bayesian framework was used specifically because it allows for the explicit updating of beliefs regarding prior probable values for parameters of interest with new evidence (i.e., data) to form updated posterior beliefs regarding probable parameter values. Given that we had prior empirical data from which we could generate our prior beliefs regarding probable values for parameters of interest, and we had collected new experimental data that could be used to update these, the Bayesian framework is ideally suited to this type of inferential problem. Contrastingly, within traditional frequentist inference prior beliefs are not specifically incorporated in this fashion. Further, our choice to utilise Bayesian approaches was also based upon the specific modelling choices made and the flexibility of current Bayesian software packages such as those used here to implement such models."*
+
+### Reviewer Comment
+
+Consider including a flowchart for the statistical analysis and then describing each element in the text. For example, something that communicates the following: Priors for observational data > posterior distributions for observational data > priors for experimental > posteriors experimental, etc. Relate the flowchart elements to the results, i.e., from which points different estimates were obtained.
+
+### Author Response
+
+This is a great suggestion and we have added a flow chart color coded to hopefully relate the results to the different stages of our modelling strategy.
+
+### Reviewer Comment
+
+Define all letters and symbols for the non-expert. For example, the degrees of freedom for the TUL model is specified as νy, but the “y” is undefined in the manuscript. Perhaps knowledge of y is obvious to the expert, but it eluded me.
+
+### Author Response
+
+Apologies, this we realise is not so clear in hindsight, but the $y$ subscript refers to the fact that this is a singular parameter estimated for the whole model. We have updated the entire statistical analysis section and included details for each model notation, and also tried to include a brief "lay" description of what the model is in essence doing to try to aid the reader in understanding. 
+
+Given this is a scientific manuscript though (and frankly, most researchers and practitioners don't fully read the analyses section most the time anyway... and I often question the extent to which many really understand the typical "basic" analyses they are more used to seeing), we have placed this in the online supplementary materials and included a footnote at the beginning of the statistical analysis section that links to this and reads:
+
+*"Note, we thank the reviewers for noting the complexity of the analyses performed in the present study relative to what both researchers and practitioners are used to encountering in the field. We have done our best to provide both detailed explanation and justification of the choices made, describe what the models being used are doing, provided mathematical notation for them, and all code for the analyses conducted is available. We have also included in the online supplementary material a brief "lay" summary which was generated making use of ChatGPT to assist in developing these explanations. We prompted ChatGPT explicitly by providing it with the copied text, including equations, from our quarto manuscript files and asked it to provide a lay description. We then edited these. These can be seen here <https://osf.io/b9n4v>."*
+
+### Reviewer Comment
+
+On page 7, in the priors for γ1 and β1 in the TUL model, it is stated “lb = -60, lb = 60.” Should the second lb be “ub” for upper bound?
+
+### Author Response
+
+Thanks for spotting this. It has been updated.
+
+### Reviewer Comment
+
+The results are effectively described and visualized. However, the figure captions should begin with a title sentence, followed by the text that was written. Panel labels (a, b, c, etc.) should also be included.
+
+### Author Response
+
+As the figures already contain titles in the plots themselves we have retained only the caption. The purpose of having titles on the figures is to faciliate their reuses by others in presentations etc without having to use the figure caption. We have added the panel labels though for each row and column.
+
+### Reviewer Comment
+
+Throughout the manuscript but particularly in the Results, the authors use the term “prior sample” to describe the retrospective observational data. This terminology might cause confusion because the word “prior” also refers to the prior distributions needed for Bayesian modelling. I suggest renaming the sample “observational sample” or some other alternative.
+
+### Author Response
+
+We have updated it throughout to instead read "previous observational sample". We have also removed the use of "prior" in other instances that might cause confusion e.g., "...prior training...", "... prior research..."
+
+### Reviewer Comment
+
+The phrase “the 𝜙 parameter for precision of the beta distribution in our experimental sample was higher in the Assisted condition suggesting that <variable> reported was more clustered around the estimated <variable> values as compared to in the Core condition” was repeated three times, once for each of the outcome variables. While informative, this phrase reflects an interpretation and it is questionable as to whether it belongs in the Results. If the authors decide to include it, include it only once because it is repetitive.
+
+### Author Response
+
+We have removed this sentence as it is mentioned that this parameter relates to clustering of responses in the discussion already.
+
+### Reviewer Comment
+
+I proposed above some methodological questions and comments that the authors may wish to address in the revised Discussion. Another potential limiter to generalizability of this study is that the exercises are all machine based, and, as the authors noted in their previous meta-analysis, a major potential benefit of supervision is technical coaching (Fisher 2022 Int J Str Cond). If participants were to use free weights, they may further “underload” for safety considerations and for not knowing the “proper technique.” I encourage the authors to consider commenting on this aspect.
+
+### Author Response
+
+This is a good point and we have added a comment in the limitations regarding this - *"Additionally, the protocols were all performed using resistance machines thus minimising one potential element of supervision; technical coaching [@fisherRoleSupervisionResistance2022; @fisherSupervisionStrengthTrainingthe2025]. Thus the generalisability to other resistance training modalities is unclear."*
+
+### Reviewer Comment
+
+·       Page 13: The following sentence is awkward and excessively long: “Under standardised training protocol prescription (i.e., single sets of RT using resistance machines to momentary failure using a fixed repetition duration using a load that should permit momentary failure in a target TUL range of 90-120 seconds) we examined exercise performance as the TUL, in addition to RPE and RPD.”
+
+### Author Response
+
+The sentence itself is quite short, though the additional content in parentheses makes it appear longer. Upon re-reading the text in parentheses though we realise that was awkward so have re-written it slightly - *"...(i.e., single sets of RT using resistance machines, performed to momentary failure using a fixed repetition duration and load that should permit momentary failure in a target TUL range of 90-120 seconds)..."* - we have kept it though as it serves as a reminder for the reader of the protocols used when they first beging reading the discussion.
+
+## Reviewer 2 - Anonymous
+
+### Reviewer Comment
+
+The aim of the current manuscript was to examine the role of supervision on effort, defined here as time under load (TUL), rating of perceived exertion (RPE), and rating of perceived discomfort (RPD), during resistance training, using both retrospective and prospective analyses. The manuscript is well written and structured. I would particularly like to highlight the ecological validity of the approach. Randomized clinical trials often struggle to replicate real-world settings, so the chosen study design strengthens the external validity of the findings.
+
+### Author Response
+
+Thank you for the kind words.
+
+### Reviewer Comment
+
+The objective provided at the end of the introduction could be clearer. At that point in the text, "effort" is not well defined. Since the manuscript later defines effort as TUL, RPE, and RPD, it would be helpful to clarify this earlier in the manuscript.
+
+<!-- ### Author Response -->
+
+We do in the introduction note that, in resistance training, effort is proxied by proximity to momentary failure but have added this more explicitly now. *"Effort is conceptualised at the relation of task demands to the capacity to meet those demands [@steeleWhatPerceptionEffort2020] and so in RT is determined by both the load utilised and also the proximity to momentary failure due to the fatigue (i.e., reduction in capacity) that occurs with continued performance."*
+
+### Reviewer Comment
+
+While I understand the logistical reasons given for the sample size in the experimental analysis, but the relatively small sample may limit the generalizability of the findings considering the approach of real-world setting. It would be appropriate to include this as a limitation of the study.
+
+### Author Response
+
+We would argue that the sample size is in fact still relatively large compared to most studies in the field and that generalisability is not the primary concern regarding sample size here and we did have participants from across varied locations as well. However the first reviewer did not that, despite us having a varied selection of resistance machines enhancing the generalisability of effects in that regard, we did have only machine based exercise and there may be theoretical reasons to suspect our findings may not generalise to other modalities such as free weights. We have added this as a limitation.
+
+### Reviewer Comment
+
+Regarding the retrospective analysis, it is unclear why the authors chose two separate samples (one with TUL and another with RPE scores) instead of selecting a sample in which both variables were available. Since the aim was to analyze the influence of supervision on effort (as reflected by both TUL and RPE), could separate samples introduce bias (as no confounding factors could be taken into account)? I am not sure about this.
+
+### Author Response
+
+We do not in the methods why two separate samples were taken. This was due to not all members using the RPE recording function in their training app. Given we also did not have any explicit causal model from which to select covariates for adjustment, and that our primary use for the prior samples was to generate informative priors, we felt that the random samples achieved this without having to identify a more selective sample of only those who had recorded RPE.
+
+### Reviewer Comment
+
+The manuscript notes that participants recorded their own TUL using timers visible in the training space. While this aligns with the goal of examining real-world settings, it would be helpful to address the validity and reliability of this method. Could discrepancies between trainee- and trainer-reported data have affected the results? Were trainers generally more rigorous in data collection?
+
+<!-- ### Author Response -->
+
+This is definitely a limitation and one which reviewer 1 also noted. We have included this in our limitations section now to make the reader aware of this. However, notably from a reliability perspective this would primary influence parameter estimate precision and so the sample sizes, use of prior-posterior updating, enhances our precision here even in the face of such error. Also, if we were to speculate, we would think that the trainees were probably more likely to be biased upwards in their TUL recording (having to stop the exercise and then stop the timer on their app... though if using the timers in the clinics they can merely see these and note mentally what time they achieved to then record), but yet we still see at least in the experimental data that far greater TUL is acheived with supervision (and even in light of the very strong priors for there being no supervision effect based on the previous sample data).
+
+### Reviewer Comment
+
+How was momentary failure defined and monitored? Was it self-determined by participants in the Core group? If so, how might this have influenced the outcomes?
+
+### Author Response
+
+The fact that it is not explicitly monitored is part of the purpose of the study. In both the *in situ* settings of the clinic in terms of the protocols prescribed, and in the experimental study, members are informed that momentary failure is defined as per Steele et al. [-@steeleClarityReportingTerminology2017] and that this is the endpoint for their exercises. In this study, TUL and RPE offer some insight into the extent to which members are adhering to this. For TUL we'd expect, assuming following the load progression rules, some distribution of TUL between 90-120 seconds and not hugely exceeding this nor any spikes. For RPE we'd expect them to be providing maximal ratings if they are indeed training to momentary failure. Thus these are used as proxies to infer effort and also the effects of supervision upon this. We already try to highlight this also in the discussion where we note that the difference in TUL for Core conditions between the previous observational sample and the experimental sample may also express that *in situ* members, despite being prescribed to do so, are not training to momentary failure. But in the experimental setting where they knew they were part of a study they trained with a greater degree of effort indicated by greater TUL and RPE.
+
+### Reviewer Comment
+
+Were the Core and Assisted groups in the retrospective analysis performing the same exercises? If different exercises were used, this could have impacted TUL and RPE outcomes.
+
+### Author Response
+
+Exercises varied from member to member in both the previous observational sample and the experimental study data. However, this has been factored into the modelling allowing for random effects by exercise/machine in order to produce an overall average treatment effect (ATE) marginalised over these. We did not have any specific hypotheses around these though so did not explore them, but the random effects for machine suggested there was very little effect with standard deviation of only ~3-4 seconds TUL between machines.
+
+### Reviewer Comment
+
+For the retrospective data, how exactly was TUL entered into the Kieser database, especially for Core participants? Did participants self-report their TUL using a stopwatch?
+
+### Author Response
+
+We note already in the methods under protocols that the data captured either using the timers (i.e., Swiss engineered clocks with sweep movement for the second hand and positioned so that there is always one in eye line for every machine to enable recording of the TUL in seconds), mobile phone app, or trainers app is input to the training card which is then recorded and stored in the Kieser Australia Database. We have added some additional information now including the description of the timers noted above. 
+
+### Reviewer Comment
+
+Is comparing only one supervised and one unsupervised session, one week apart, sufficient to draw firm conclusions? Given the potential for a Hawthorne effect (i.e., participants modifying behavior due to awareness of being observed), a single-session design may overestimate the true effect of supervision.
+Could repeated sessions have offered a more stable measure?
+
+### Author Response
+
+This is certain to be the case that there will be differential effects over time for the effects of supervision, as would be the case for any training manipulations. As noted inn the discussion already, we are in the process of developing longitudinal research to examine this specifically though. In fact we are in the process currently of developing the protocols and analysis plans for an interrupted time-series with control design with internal replication in order to examine the effects in our members who have changed contracts over time i.e., went from Core to Assisted and vice versa. It is however a complex design and analysis and so, given the already complex approach taken here, we have kept this as a separate piece of follow on work to build further on this area.
+
+### Reviewer Comment
+
+If participants were not blinded to their TUL, is it possible that increased TUL influenced their reported RPE and RPD? Could it influence the outcomes considering the cross-over design?
+
+### Author Response
+
+This certainly could be a confounder for RPE/RPD responses, however this could be a confounder irrespective of whether participants knew their exact TUL or not assuming they have a reasonable perception of time i.e., they could tell if they went longer/shorter than a previous experience they could anchor against and the respond with RPE/RPD as either higher/lower correspondingly. But the randomised cross-over design for the experimental study at least allows for any effect of this to be removed.
+
+### Reviewer Comment
+
+The lack of significant differences in TUL in the retrospective analysis contrasts with findings from the experimental condition. The authors suggest this may be due to more appropriate load prescription in the Assisted group; however, this interpretation is not supported by the retrospective RPE data. If Assisted participants truly trained with a higher (and more optimal) load, one would expect their RPE scores to be notably higher, yet this was not observed.
+
+### Author Response
+
+This interpretation is more speculative and in reference to the Core vs Assisted contrast in the previous observational sample only. However, the Core vs Assisted RPE contrasts are actually of similar magnitudes in both the previous observational sample and the experimental data. So whilst the absolute magnitudes are still low for the previous sample, the difference between conditions is still similar to that seen in the experimental data. So, it is perhaps plausible that more appropriate loads during Assisted compared to Core may be a reason for this even if they are still suboptimal. But we do also somewhat test this explanation and note the exploratory examination of some of our load progression data which suggests that load progressions may be similar in the footnote. As noted above, we do plan to more carefully examine the longitudinal causal effects of supervision in our members looking at both load progression, and also the isometric strength test data we routinely collect which we believe may better tease out this as a possible explanation for the *in situ* results observed.
+
+### Reviewer Comment
+
+Given the limitations presented by the authors, the results provided by the retrospective analysis, and the effect analyzed during the experimental analysis about the comparison of only one session of supervised versus unsupervised one-week apart, the conclusion that “these results in general support prior work highlighting the importance of supervision during RT” seems overstated. While I agree with the authors onthe potential influence of the Hawthorne effect, a more cautious and nuanced interpretation would better reflect the study’s findings and limitations.
+
+### Author Response
+
+Given that we are cautious in our interpretation of the previous observational data results alone, but that the experimental study provides us with causal estimates due to the randomisation and cross-over design, we do not feel that our results are overstated. The experimental findings do support the effects of supervision, but the contrast with the seeming lack of difference in TUL, and the smaller absolute RPEs, in *in situ* data suggests that this effect is difficult to causally identify against the background of potential confounders in observational data. Again, this is why in our next planned staged of this programme of work we are engaging with more appropriate causal designs such as the interrupted time-series with control design [@lopezbernalUseControlsInterrupted2018].
+
+### Reviewer Comment
+
+No conflict of interest is reported, yet the study analyzes the effect of the Kieser Method, a supervised high-intensity training model developed by the Kieser Training Company, with which two of the authors are affiliated. Given this connection, could there be a potential bias in the interpretation or preference for certain results? While this does not undermine the value of the study, acknowledging and addressing this possibility would strengthen the transparency and integrity of the manuscript.
+
+### Author Response
+
+Thank you for noting this. We apologies for not being more explicit. We had mentioned that Kieser had provided in-kind funding for this project and our affiliations as you note are clearly aligned. But we have added a section to be more clear regarding this. We also hope that our transparency in terms of the data, materials, code, and indeed the results (which to some extent suggest that our in clinic protocols are not in fact being adhered to... something we have fed back internally and are looking at how to address and also evaluate prospectively the approaches we take to this) also highlight that we are trying to minimise any affiliational bias as much as possible.
+
+## Reviewer 3 - Anonymous
+
+### Reviewer Comment
+
+I have gone through the study and need the following recommendations for the final decision
+
+### Author Response
+
+Many thanks for your review.
+
+### Reviewer Comment
+
+1. The abstract is well-written and explained, but it would benefit from being divided into distinct sections, such as background, methodology, results, and conclusion.
+
+### Author Response
+
+We have not made this change for now as the journals we may potentially submit to upon recommendation (either Communications in Kinesiology or PeerJ) do not typically require this format. If a journal subsequently requires this we will make the change in line with their requirements.
+
+### Reviewer Comment
+
+2. There is only one line about RT. A few more lines at the start of the abstract would be beneficial for the reader.
+
+### Author Response
+
+The abstract is already quite lengthy and hence we have kept this general information to a minimum opting to get straight to summarising the study itself. The introduction provides more exposition on the broader topic.
+
+### Reviewer Comment
+
+3. The authors used the word "little" in "exercise performance differed little between supervised and unsupervised training." It would be better to use some technical words because it shows subjectivity rather objectivity. What is meant by little can be explained numerically.
+
+### Author Response
+
+It is hard to avoid using imprecise descriptors of the magnitude of difference and impossible to avoid making some subjective determination of whether a result is big enough or small enough to care or not care about relative to typical values of the outcome and other background information. Though, the manuscript and abstract provide the precise numerical estimates for the values we are admittedly subjectively interpreting here and so any reader can interpret these themselves deciding if they agree with the difference being "little".
+
+### Reviewer Comment
+
+4.The introduction is well written and it contains latest studies. but it should be extended more.
+
+### Author Response
+
+Without suggestion of what could be included to extend it we have not added anything further. The manuscript is already quite long and we believe we have provided the background as succinctly as possible in the introduction already and do not require any further detail.
+
+### Reviewer Comment
+
+5.The software used for the study should also be mentioned.
+
+### Author Response
+
+Any specific software used for protocols such as the mobile phone app is already mentioned, and we link out to an extensive list generated using the `grateful` package already containing all of the software used for analysis including version numbers - https://osf.io/ew79g. This is also included in the `renv` lockfile such that anyone reproducing our analyses can utilise the exact versions we had utilised. 
+
+### Reviewer Comment
+
+6.The result section should be explained for the general readers to understand the technical outcomes. It would be better to make statements simple while explaining technical words.
+
+### Author Response
+
+As suggested by reviewer 1 we have added a lay explanation of the models, and have also added a visual to help with interpretation of the models and results.
+
+### Reviewer Comment
+
+7.The authors mentioned about the confidence intervals and quantile intervals. Are there any more measures to show the strength of outcomes like effect size ?
+
+### Author Response
+
+This is a common misonception in the field; namely that by *effect size* something like a standardised effect size e.g., Cohen's d is meant. All of the point estimates and the corresponding interval estimates are in fact effect size estimates in and of them selves and in the units of interest to a reader i.e., seconds, probability of stopping, percentage effort/discomfort. So the strength of the outcomes can be interpreted from these directly. 
+
+### Reviewer Comment
+
+8.Overall, the study is new and well articulated and would provide reader a quality study.
+
+### Authors Response
+
+Thank you for the kinds words.
+
+### Reviewer Comment
+
+9.Actual real life contribution of this study should be highlighted in the conclusion section. What it can bring in real life?
+
+### Authors Response
+
+We would prefer to leave out inclusion of "real life contribution" such as practical recommendations from this work. In fact, the typical inclusion of practical recommendations by many applied journals in our field from a single study always feels unwarranted and results in overstretching of conclusions. Neither of the journals we are considering to submit to require practical recommendations of this kind. We would note in response though that a very real outcome from this work has for us at Kieser Australia to internally consider how we might adapt our operational procedures to try and ensure that our protocols as prescribed are in fact being followed by members and trainers. Our future work will look to evaluate this more closely as we implement changes. 
+
+# References

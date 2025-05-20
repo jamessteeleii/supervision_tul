@@ -1266,7 +1266,6 @@ make_plot_loadprog <- function(preds, slopes) {
 make_flow_chart <- function() {
   # Data for nodes
   nodes <- data.frame(
-    id = 1:8,
     label = c(
       "Previous observational data\n(i.e., TUL, session RPE)",
       "Experimental study data\n(i.e., TUL, RPE, RPD)",

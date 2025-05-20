@@ -11,8 +11,8 @@ fit_model_prior_sample_rpe|function|073d92706379d275|||||||||||||||
 fit_model_prior_sample_tul|function|731ffc75b29613c0|||||||||||||||
 fit_model_rpe|function|ece8b3531ced88b0|||||||||||||||
 fit_model_tul|function|5420eb1abbad4fb2|||||||||||||||
-flow_chart|stem|8fec6be5a5b715ff|aaec626ee56aee9e|84b0e824213f8c74|-1623952172||t20228.566488175s|51ecb4bdf3b61366|258777|qs|local|vector|||3.46||
-flow_chart_tiff|stem|0a6a6bf54b64df87|03140b982162bb79|62efc83370aa3d3a|-635963118||t20228.5664944875s|1331fc06a40e10df|97|qs|local|vector|||0.28||
+flow_chart|stem|377378edbe082c3d|aaec626ee56aee9e|aeca36799e031927|-1623952172||t20228.6060595847s|a5f57c787fa5646c|259423|qs|local|vector|||3.43||
+flow_chart_tiff|stem|0a6a6bf54b64df87|03140b982162bb79|6652fe587db76628|-635963118||t20228.6060655978s|1331fc06a40e10df|97|qs|local|vector|||0.27||
 get_contrast_draws_discomfort|function|c193ee2baf1aec1a|||||||||||||||
 get_contrast_draws_rpe|function|53e6887a1eb8dd27|||||||||||||||
 get_contrast_draws_tul|function|e7eb7ac0560037dc|||||||||||||||
@@ -27,7 +27,7 @@ get_preds_loadprog|function|110e712a639589d8|||||||||||||||
 get_slopes_loadprog|function|063bba6b1565ad64|||||||||||||||
 hurdle_student_t|stem|88febcc959676bee|99d53633fe833ba1|fec10c0fbfdf7d8b|2063339794||t20104.659446836s|b252084a240eec72|455|qs|local|vector|||0||
 hurdle_student_t_setup|function|2b0fdcba93765193|||||||||||||||
-make_flow_chart|function|a68e6fba831040e5|||||||||||||||
+make_flow_chart|function|59c5daa98f1db8f0|||||||||||||||
 make_plot_combined_data|function|7b00e8aea8976119|||||||||||||||
 make_plot_combined_rpe_discomfort|function|76633c90daa1d4ce|||||||||||||||
 make_plot_combined_tul|function|980b04671764a6db|||||||||||||||

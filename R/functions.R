@@ -785,7 +785,7 @@ make_plot_combined_data <- function(plot1, plot2, plot3, plot4, plot5) {
   prior_plots <- (
     (plot1) + theme(strip.text = element_blank()) | (plot2)
   ) +
-    plot_annotation(title = "Prior Sample Data Distributions",
+    plot_annotation(title = "Previous Observational Sample Data Distributions",
                     subtitle = "Time Under Load and Session Rating of Perceived Effort",
                     tag_levels = "1", tag_prefix = "A") +
     plot_layout(axes = "collect")
